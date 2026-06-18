@@ -1,0 +1,4246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio – Data, ML, AI and Cloud</title>
+    <meta name="description" content="Portfolio of Lucas Melquiades, a junior software engineer transitioning into Data, AI and Machine Learning Engineering with experience in Dynamics 365, C#/.NET, JavaScript, SQL, Power BI and cloud foundations.">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-blue: #0A84FF;
+            --bright-blue: #00BFFF;
+            --neon-green: #00FF9C;
+            --cyber-green: #39FF14;
+            --silver: #C0C0C0;
+            --light-silver: #A8B2C1;
+            --white: #FFFFFF;
+            --off-white: #F0F4FF;
+            --deep-black: #050A0F;
+            --dark-bg: #0D1117;
+            --card-bg: rgba(13, 17, 23, 0.8);
+            --border-color: rgba(192, 192, 192, 0.2);
+            
+            --font-primary: 'Inter', sans-serif;
+            --font-heading: 'Space Grotesk', sans-serif;
+            
+            --transition-fast: 0.2s ease;
+            --transition-normal: 0.4s ease;
+            --transition-slow: 0.6s ease;
+        }
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--deep-black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        button {
+            cursor: pointer;
+            border: none;
+            font-family: var(--font-primary);
+            transition: all var(--transition-normal);
+        }
+@keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 20px rgba(10, 132, 255, 0.3);
+            }
+            50% {
+                box-shadow: 0 0 40px rgba(10, 132, 255, 0.6);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        @keyframes blink {
+            0%, 49% {
+                opacity: 1;
+            }
+            50%, 100% {
+                opacity: 0;
+            }
+        }
+
+        @keyframes progressFill {
+            from {
+                width: 0;
+            }
+            to {
+                width: var(--progress-value);
+            }
+        }
+
+        @keyframes skillGradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes skillColorBloom {
+            0%, 100% {
+                filter: saturate(1) brightness(1);
+                box-shadow:
+                    0 0 12px rgba(0, 255, 156, 0.22),
+                    0 0 26px rgba(10, 132, 255, 0.08);
+            }
+            50% {
+                filter: saturate(1.28) brightness(1.12);
+                box-shadow:
+                    0 0 16px rgba(0, 255, 156, 0.34),
+                    0 0 34px rgba(10, 132, 255, 0.16);
+            }
+        }
+
+        @keyframes skillGlowSweep {
+            0% {
+                opacity: 0;
+                transform: translateX(-120%);
+            }
+            20% {
+                opacity: 0.7;
+            }
+            72% {
+                opacity: 0.85;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(120%);
+            }
+        }
+
+        @keyframes skillTipGlow {
+            0%, 100% {
+                opacity: 0.45;
+                transform: translateX(10%) scaleX(0.9);
+            }
+            50% {
+                opacity: 1;
+                transform: translateX(0) scaleX(1.18);
+            }
+        }
+
+        @keyframes timelineCardSweep {
+            0% {
+                opacity: 0;
+                transform: translateX(-120%);
+            }
+            35% {
+                opacity: 0.8;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(120%);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes particleFloat {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.5;
+            }
+            90% {
+                opacity: 0.5;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px);
+                opacity: 0;
+            }
+        }
+#navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(5, 10, 15, 0.5);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 40px;
+            z-index: 1000;
+            transition: all var(--transition-normal);
+        }
+
+        #navbar.scrolled {
+            background: rgba(5, 10, 15, 0.95);
+            border-bottom-color: var(--border-color);
+            box-shadow: 0 4px 30px rgba(10, 132, 255, 0.1);
+        }
+
+        .nav-mobile {
+            display: none;
+        }
+
+        .nav-logo {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            width: 46px;
+            height: 46px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.18),
+                inset 0 -14px 22px rgba(10, 132, 255, 0.08),
+                0 0 18px rgba(0, 255, 156, 0.1);
+            backdrop-filter: blur(16px) saturate(145%);
+            -webkit-backdrop-filter: blur(16px) saturate(145%);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(10, 132, 255, 0.06), rgba(0, 255, 156, 0.08)),
+                rgba(255, 255, 255, 0.035);
+            position: relative;
+            text-indent: -9999px;
+            overflow: hidden;
+        }
+
+        .nav-logo::before {
+            content: 'LM';
+            text-indent: 0;
+            background: linear-gradient(135deg, var(--bright-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 500;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 112px;
+            height: 42px;
+            color: var(--light-silver);
+            padding: 0 14px;
+            border-radius: 999px;
+            isolation: isolate;
+            overflow: hidden;
+            transition:
+                color var(--transition-normal),
+                text-shadow var(--transition-normal),
+                transform var(--transition-fast);
+        }
+
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(10, 132, 255, 0.1) 42%, rgba(0, 255, 156, 0.12)),
+                rgba(255, 255, 255, 0.035);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.22),
+                inset 0 -18px 28px rgba(10, 132, 255, 0.08),
+                0 10px 28px rgba(10, 132, 255, 0.16),
+                0 0 20px rgba(0, 255, 156, 0.08);
+            backdrop-filter: blur(18px) saturate(150%);
+            -webkit-backdrop-filter: blur(18px) saturate(150%);
+            opacity: 0;
+            transform: scale(0.88);
+            transition:
+                opacity var(--transition-normal),
+                transform var(--transition-normal),
+                border-color var(--transition-normal),
+                box-shadow var(--transition-normal);
+            z-index: -2;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            inset: 1px;
+            border-radius: inherit;
+            background: linear-gradient(
+                120deg,
+                transparent 0%,
+                rgba(255, 255, 255, 0.24) 24%,
+                rgba(255, 255, 255, 0.04) 44%,
+                transparent 70%
+            );
+            opacity: 0;
+            transform: translateX(-36%);
+            transition:
+                opacity var(--transition-normal),
+                transform var(--transition-normal);
+            z-index: -1;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--white);
+            text-shadow: 0 0 14px rgba(0, 255, 156, 0.22);
+            transform: translateY(-1px);
+        }
+
+        .nav-links a:hover::before,
+        .nav-links a.active::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .nav-links a.active::before {
+            border-color: rgba(0, 255, 156, 0.34);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.28),
+                inset 0 -18px 28px rgba(10, 132, 255, 0.1),
+                0 12px 30px rgba(10, 132, 255, 0.2),
+                0 0 24px rgba(0, 255, 156, 0.16);
+        }
+
+        .nav-links a:hover::after,
+        .nav-links a.active::after {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .language-switcher {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 112px;
+            width: 112px;
+        }
+
+        .language-toggle {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 7px;
+            width: 100%;
+            height: 42px;
+            padding: 0 14px;
+            border-radius: 999px;
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(10, 132, 255, 0.08), rgba(0, 255, 156, 0.1)),
+                rgba(255, 255, 255, 0.035);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                0 10px 28px rgba(10, 132, 255, 0.14);
+            backdrop-filter: blur(18px) saturate(150%);
+            -webkit-backdrop-filter: blur(18px) saturate(150%);
+            transition: all var(--transition-normal);
+        }
+
+        .language-toggle:hover,
+        .language-switcher.open .language-toggle {
+            border-color: rgba(0, 255, 156, 0.34);
+            transform: translateY(-1px);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.26),
+                0 12px 30px rgba(10, 132, 255, 0.18),
+                0 0 22px rgba(0, 255, 156, 0.12);
+        }
+
+        .language-flag {
+            width: 22px;
+            height: 15px;
+        }
+
+        .flag-icon {
+            display: inline-block;
+            width: 22px;
+            height: 15px;
+            flex: 0 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 3px;
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.38),
+                0 0 8px rgba(10, 132, 255, 0.16);
+            transform: translateZ(0);
+        }
+
+        .flag-icon::before,
+        .flag-icon::after {
+            content: '';
+            position: absolute;
+        }
+
+        .flag-us {
+            background: repeating-linear-gradient(
+                to bottom,
+                #b22234 0 7.69%,
+                #ffffff 7.69% 15.38%
+            );
+        }
+
+        .flag-us::before {
+            top: 0;
+            left: 0;
+            width: 44%;
+            height: 54%;
+            background:
+                radial-gradient(circle, rgba(255, 255, 255, 0.95) 0 0.55px, transparent 0.7px) 1.5px 1.3px / 3px 3px,
+                #3c3b6e;
+        }
+
+        .flag-br {
+            background: #009c3b;
+        }
+
+        .flag-br::before {
+            top: 50%;
+            left: 50%;
+            width: 10px;
+            height: 10px;
+            background: #ffdf00;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .flag-br::after {
+            top: 50%;
+            left: 50%;
+            width: 5.4px;
+            height: 5.4px;
+            border-radius: 50%;
+            background:
+                linear-gradient(12deg, transparent 43%, rgba(255, 255, 255, 0.9) 44% 55%, transparent 56%),
+                #002776;
+            transform: translate(-50%, -50%);
+        }
+
+        .flag-ar {
+            background: linear-gradient(to bottom, #74acdf 0 33.33%, #ffffff 33.33% 66.66%, #74acdf 66.66% 100%);
+        }
+
+        .flag-ar::before {
+            top: 50%;
+            left: 50%;
+            width: 4.4px;
+            height: 4.4px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle, #f6b40e 0 58%, transparent 60%),
+                conic-gradient(from 0deg, #f6b40e 0 10deg, transparent 10deg 20deg, #f6b40e 20deg 30deg, transparent 30deg 40deg, #f6b40e 40deg 50deg, transparent 50deg 60deg, #f6b40e 60deg 70deg, transparent 70deg 80deg, #f6b40e 80deg 90deg, transparent 90deg 100deg, #f6b40e 100deg 110deg, transparent 110deg 120deg, #f6b40e 120deg 130deg, transparent 130deg 140deg, #f6b40e 140deg 150deg, transparent 150deg 160deg, #f6b40e 160deg 170deg, transparent 170deg 180deg, #f6b40e 180deg 190deg, transparent 190deg 200deg, #f6b40e 200deg 210deg, transparent 210deg 220deg, #f6b40e 220deg 230deg, transparent 230deg 240deg, #f6b40e 240deg 250deg, transparent 250deg 260deg, #f6b40e 260deg 270deg, transparent 270deg 280deg, #f6b40e 280deg 290deg, transparent 290deg 300deg, #f6b40e 300deg 310deg, transparent 310deg 320deg, #f6b40e 320deg 330deg, transparent 330deg 340deg, #f6b40e 340deg 350deg, transparent 350deg 360deg);
+            transform: translate(-50%, -50%);
+        }
+
+        .flag-it {
+            background: linear-gradient(to right, #009246 0 33.33%, #ffffff 33.33% 66.66%, #ce2b37 66.66% 100%);
+        }
+
+        .flag-kr {
+            background:
+                linear-gradient(#111111 0 0) 3px 3px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 3px 5px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 3px 7px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 15px 3px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 15px 7px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 3px 11px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 15px 11px / 4px 1px no-repeat,
+                linear-gradient(#111111 0 0) 15px 13px / 4px 1px no-repeat,
+                #ffffff;
+        }
+
+        .flag-kr::before {
+            top: 50%;
+            left: 50%;
+            width: 7.2px;
+            height: 7.2px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 50% 28%, #cd2e3a 0 30%, transparent 31%),
+                radial-gradient(circle at 50% 72%, #0047a0 0 30%, transparent 31%),
+                linear-gradient(to bottom, #cd2e3a 0 50%, #0047a0 50% 100%);
+            transform: translate(-50%, -50%);
+        }
+
+        .flag-kr::after {
+            top: 5px;
+            right: 3px;
+            width: 4px;
+            height: 1px;
+            background: #111111;
+            box-shadow: 0 2px #111111;
+        }
+
+        .language-code {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.7px;
+        }
+
+        .language-toggle i {
+            font-size: 10px;
+            opacity: 0.7;
+            transition: transform var(--transition-fast);
+        }
+
+        .language-switcher.open .language-toggle i {
+            transform: rotate(180deg);
+        }
+
+        .language-menu {
+            position: absolute;
+            top: calc(100% + 10px);
+            right: 0;
+            width: 230px;
+            padding: 8px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background:
+                linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(10, 132, 255, 0.08), rgba(0, 255, 156, 0.08)),
+                rgba(5, 10, 15, 0.88);
+            box-shadow:
+                inset 0 1px 0 rgba(255, 255, 255, 0.14),
+                0 24px 50px rgba(0, 0, 0, 0.32),
+                0 0 24px rgba(10, 132, 255, 0.12);
+            backdrop-filter: blur(20px) saturate(155%);
+            -webkit-backdrop-filter: blur(20px) saturate(155%);
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(-8px) scale(0.96);
+            transform-origin: top right;
+            transition:
+                opacity var(--transition-normal),
+                transform var(--transition-normal);
+            z-index: 1200;
+        }
+
+        .language-switcher.open .language-menu {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0) scale(1);
+        }
+
+        .language-menu button {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 11px;
+            border: 0;
+            border-radius: 10px;
+            background: transparent;
+            color: var(--light-silver);
+            font-family: var(--font-primary);
+            font-size: 13px;
+            text-align: left;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+        }
+
+        .language-menu button:hover,
+        .language-menu button.active {
+            color: var(--white);
+            background: rgba(10, 132, 255, 0.16);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--white);
+            transition: all var(--transition-fast);
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translateY(10px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translateY(-10px);
+        }
+#hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 80px;
+        }
+
+        .hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.3;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+            max-width: 900px;
+            padding: 0 20px;
+            animation: fadeInUp 1s ease 0.2s backwards;
+        }
+
+        .hero-greeting {
+            font-size: 18px;
+            color: var(--light-silver);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero-name {
+            font-family: var(--font-heading);
+            font-size: clamp(40px, 8vw, 80px);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--bright-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+
+        .hero-title {
+            min-height: 50px;
+            font-size: 24px;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .typing-text {
+            position: relative;
+        }
+
+        .typing-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 24px;
+            background: var(--neon-green);
+            margin-left: 5px;
+            animation: blink 1s infinite;
+        }
+
+        .hero-bio {
+            font-size: 16px;
+            color: var(--light-silver);
+            margin-bottom: 12px;
+            line-height: 1.8;
+            max-width: 720px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-brain {
+            display: block;
+            text-align: center;
+            font-size: 28px;
+            line-height: 1;
+            margin: 0 auto 26px;
+            filter: drop-shadow(0 0 10px rgba(0, 255, 156, 0.25));
+        }
+
+        .hero-highlights {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: min(100%, 486px);
+            margin: 18px auto 34px;
+        }
+
+        .hero-highlight {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            border: 1px solid var(--border-color);
+            background: rgba(10, 132, 255, 0.08);
+            color: var(--off-white);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .hero-highlight-glow {
+            border-color: rgba(0, 255, 156, 0.45);
+            background: rgba(0, 255, 156, 0.1);
+            box-shadow: 0 0 22px rgba(0, 255, 156, 0.18);
+        }
+
+        .hero-certification {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            width: min(100%, 486px);
+            padding: 10px 18px;
+            border-radius: 8px;
+            border: 1px solid rgba(10, 132, 255, 0.45);
+            background: rgba(10, 132, 255, 0.08);
+            color: var(--off-white);
+            margin: 0 auto 34px;
+            box-shadow: 0 0 24px rgba(10, 132, 255, 0.18);
+        }
+
+        .hero-certification:hover {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 28px rgba(0, 255, 156, 0.24);
+            transform: translateY(-2px);
+        }
+
+        .hero-certification img {
+            width: 58px;
+            height: 58px;
+            object-fit: contain;
+            flex: 0 0 auto;
+        }
+
+        .hero-certification-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            text-align: center;
+        }
+
+        .hero-certification-title {
+            font-size: 14px;
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        .hero-certification-subtitle {
+            color: var(--light-silver);
+            font-size: 12px;
+            line-height: 1.3;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: min(100%, 486px);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .hero-buttons > * {
+            flex: 1 1 0;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 14px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-blue), var(--bright-blue));
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(10, 132, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--silver);
+            border: 2px solid var(--silver);
+        }
+
+        .btn-secondary:hover {
+            color: var(--primary-blue);
+            border-color: var(--primary-blue);
+            background: rgba(10, 132, 255, 0.1);
+            box-shadow: 0 0 20px rgba(10, 132, 255, 0.3);
+        }
+
+        .hero-socials {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .social-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: rgba(10, 132, 255, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            border: 1px solid var(--border-color);
+            transition: all var(--transition-normal);
+            color: var(--primary-blue);
+        }
+
+        .social-icon:hover {
+            background: rgba(10, 132, 255, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 0 20px rgba(10, 132, 255, 0.4);
+            border-color: var(--primary-blue);
+        }
+#about {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            text-align: center;
+            background: linear-gradient(135deg, var(--bright-blue), var(--neon-green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            max-width: 760px;
+            margin: -38px auto 50px;
+            color: var(--light-silver);
+            text-align: center;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .about-visual {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 30px;
+            min-height: 100%;
+        }
+
+        .about-avatar {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+            isolation: isolate;
+        }
+
+        .about-avatar::before,
+        .about-avatar::after {
+            content: '';
+            position: absolute;
+            inset: -18px;
+            border-radius: 50%;
+            background: conic-gradient(
+                from 0deg,
+                rgba(0, 255, 156, 0),
+                rgba(0, 255, 156, 0.42),
+                rgba(10, 132, 255, 0.18),
+                rgba(0, 255, 156, 0)
+            );
+            filter: blur(18px);
+            opacity: 0.65;
+            animation: avatarGlowOrbit 5.5s linear infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .about-avatar::after {
+            inset: -34px;
+            opacity: 0.22;
+            filter: blur(30px);
+            animation-duration: 8s;
+            animation-direction: reverse;
+        }
+
+        .avatar-circle {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-blue), var(--neon-green));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 100px;
+            font-weight: 700;
+            color: var(--deep-black);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid var(--border-color);
+            box-shadow:
+                0 0 24px rgba(0, 255, 156, 0.26),
+                0 0 70px rgba(10, 132, 255, 0.16),
+                inset 0 0 28px rgba(0, 255, 156, 0.08);
+            z-index: 1;
+        }
+
+        .avatar-circle::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(
+                from 0deg,
+                var(--primary-blue),
+                var(--neon-green),
+                var(--primary-blue)
+            );
+            animation: spin 10s linear infinite;
+            z-index: 0;
+        }
+
+        .avatar-circle::after {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            background:
+                radial-gradient(circle at 64% 30%, rgba(0, 255, 156, 0.16), transparent 30%),
+                linear-gradient(145deg, rgba(10, 132, 255, 0.14), transparent 48%);
+            border-radius: 50%;
+            box-shadow:
+                inset 0 0 0 1px rgba(255, 255, 255, 0.08),
+                inset 0 0 24px rgba(0, 0, 0, 0.36);
+            pointer-events: none;
+            z-index: 4;
+        }
+
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes avatarGlowOrbit {
+            from { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.04); }
+            to { transform: rotate(360deg) scale(1); }
+        }
+
+        .avatar-photo {
+            position: absolute;
+            inset: 6px;
+            width: calc(100% - 12px);
+            height: calc(100% - 12px);
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: 58% 47%;
+            filter: saturate(0.96) contrast(1.04) brightness(0.92);
+            z-index: 3;
+            display: block;
+        }
+
+        .about-neural-panel {
+            width: min(100%, 420px);
+            height: 420px;
+            position: relative;
+            overflow: hidden;
+            transform-style: preserve-3d;
+        }
+
+        .about-neural-panel::before {
+            content: '';
+            position: absolute;
+            inset: 12px;
+            border-radius: 50%;
+            background:
+                radial-gradient(circle at 50% 42%, rgba(0, 255, 156, 0.14), transparent 48%),
+                radial-gradient(circle at 50% 64%, rgba(10, 132, 255, 0.12), transparent 58%);
+            filter: blur(22px);
+            opacity: 0.9;
+            animation: neuralPanelPulse 4s ease-in-out infinite;
+        }
+
+        .about-neural-panel::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 16px;
+            width: 72%;
+            height: 18px;
+            transform: translateX(-50%);
+            background: radial-gradient(ellipse, rgba(0, 255, 156, 0.18), transparent 70%);
+            filter: blur(8px);
+        }
+
+        .about-neural-canvas {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            display: block;
+            pointer-events: none;
+        }
+
+        @keyframes neuralPanelPulse {
+            0%, 100% { opacity: 0.55; transform: scale(0.96); }
+            50% { opacity: 1; transform: scale(1.04); }
+        }
+
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .about-text p {
+            color: var(--light-silver);
+            margin-bottom: 20px;
+            line-height: 1.8;
+            text-align: justify;
+            text-align-last: left;
+        }
+
+        .learning-stack {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .skill-chip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(10, 132, 255, 0.15);
+            border: 1px solid var(--primary-blue);
+            color: var(--primary-blue);
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 600;
+            min-height: 48px;
+            text-align: center;
+            animation: fadeInScale 0.6s ease backwards;
+        }
+
+        .skill-chip:nth-child(1) { animation-delay: 0.1s; }
+        .skill-chip:nth-child(2) { animation-delay: 0.2s; }
+        .skill-chip:nth-child(3) { animation-delay: 0.3s; }
+        .skill-chip:nth-child(4) { animation-delay: 0.4s; }
+        .skill-chip:nth-child(5) { animation-delay: 0.5s; }
+        .skill-chip:nth-child(6) { animation-delay: 0.6s; }
+
+        .stats-row {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 12px;
+            margin-top: 40px;
+        }
+
+        .stat {
+            background: rgba(10, 132, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--neon-green);
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--neon-green);
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: var(--light-silver);
+            margin-top: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+#skills {
+            padding: 100px 40px;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        #skills::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(10, 132, 255, 0.03) 0px,
+                    rgba(10, 132, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 20px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(10, 132, 255, 0.03) 0px,
+                    rgba(10, 132, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 20px
+                );
+            pointer-events: none;
+        }
+
+        .skills-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .skill-category {
+            margin-bottom: 50px;
+        }
+
+        .skill-category h3 {
+            font-size: 18px;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        .skill-item {
+            margin-bottom: 25px;
+        }
+
+        .skill-label {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .skill-name {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .skill-percentage {
+            color: var(--neon-green);
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+        }
+
+        .skill-bar {
+            height: 8px;
+            background: rgba(192, 192, 192, 0.1);
+            border-radius: 4px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                var(--primary-blue) 0%,
+                #00c8ff 24%,
+                var(--neon-green) 52%,
+                #7cffc8 72%,
+                #7a8cff 88%,
+                var(--primary-blue) 100%
+            );
+            background-size: 260% 100%;
+            border-radius: 4px;
+            width: 0;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 0 12px rgba(0, 255, 156, 0.22),
+                0 0 26px rgba(10, 132, 255, 0.08);
+            animation:
+                progressFill 1.5s ease forwards,
+                skillGradientFlow 4.2s ease-in-out infinite 1.5s,
+                skillColorBloom 2.8s ease-in-out infinite 1.5s;
+        }
+
+        .skill-bar-fill::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                105deg,
+                transparent 0%,
+                transparent 28%,
+                rgba(255, 255, 255, 0.34) 46%,
+                rgba(0, 255, 156, 0.48) 58%,
+                transparent 74%,
+                transparent 100%
+            );
+            animation: skillGlowSweep 3s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        .skill-bar-fill::after {
+            content: '';
+            position: absolute;
+            top: -4px;
+            right: -2px;
+            width: 26px;
+            height: 16px;
+            border-radius: 999px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.78), rgba(0, 255, 156, 0.46) 42%, transparent 72%);
+            filter: blur(4px);
+            animation: skillTipGlow 2.4s ease-in-out infinite;
+            pointer-events: none;
+        }
+#experience {
+            padding: 100px 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            --timeline-line-x: 18px;
+            --timeline-line-width: 2px;
+            --timeline-content-offset: 54px;
+            --timeline-dot-size: 14px;
+            position: relative;
+            padding-left: var(--timeline-content-offset);
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: var(--timeline-line-x);
+            top: 0;
+            bottom: 0;
+            width: var(--timeline-line-width);
+            background: linear-gradient(
+                180deg,
+                var(--primary-blue),
+                var(--neon-green),
+                var(--primary-blue)
+            );
+            opacity: 0.35;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform 1.15s ease, opacity 0.8s ease;
+        }
+
+        #experience.timeline-started .timeline::before {
+            opacity: 1;
+            transform: scaleY(1);
+        }
+
+        .timeline-item {
+            --timeline-delay: 0s;
+            position: relative;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+        }
+
+        .timeline-item:nth-child(1) { --timeline-delay: 0.05s; }
+        .timeline-item:nth-child(2) { --timeline-delay: 0.12s; }
+        .timeline-item:nth-child(3) { --timeline-delay: 0.12s; }
+        .timeline-item:nth-child(4) { --timeline-delay: 0.12s; }
+
+        .timeline-dot {
+            position: absolute;
+            left: calc(
+                var(--timeline-line-x) -
+                var(--timeline-content-offset) +
+                (var(--timeline-line-width) / 2) -
+                (var(--timeline-dot-size) / 2)
+            );
+            top: 10px;
+            width: var(--timeline-dot-size);
+            height: var(--timeline-dot-size);
+            border-radius: 50%;
+            background: var(--deep-black);
+            border: 2px solid var(--primary-blue);
+            box-shadow: 0 0 0 4px rgba(10, 132, 255, 0.12), 0 0 16px rgba(10, 132, 255, 0.45);
+            opacity: 0;
+            transform: scale(0.65);
+            transition:
+                opacity 0.45s ease calc(var(--timeline-delay) + 0.12s),
+                transform 0.55s cubic-bezier(0.16, 1, 0.3, 1) calc(var(--timeline-delay) + 0.12s),
+                box-shadow 0.5s ease calc(var(--timeline-delay) + 0.12s);
+        }
+
+        .timeline-item.is-visible .timeline-dot {
+            opacity: 1;
+            transform: scale(1);
+            box-shadow: 0 0 0 6px rgba(10, 132, 255, 0.16), 0 0 24px rgba(10, 132, 255, 0.64);
+        }
+
+        .timeline-item:nth-child(even) .timeline-dot {
+            border-color: var(--neon-green);
+            box-shadow: 0 0 0 4px rgba(0, 255, 156, 0.12), 0 0 16px rgba(0, 255, 156, 0.42);
+        }
+
+        .timeline-item.is-visible:nth-child(even) .timeline-dot {
+            box-shadow: 0 0 0 6px rgba(0, 255, 156, 0.16), 0 0 24px rgba(0, 255, 156, 0.58);
+        }
+
+        .timeline-content {
+            background: rgba(10, 132, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--primary-blue);
+            padding: 25px;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translate3d(34px, 42px, 0);
+            transition:
+                opacity 0.75s ease var(--timeline-delay),
+                transform 0.75s cubic-bezier(0.16, 1, 0.3, 1) var(--timeline-delay),
+                border-color 0.5s ease,
+                box-shadow 0.5s ease,
+                background 0.5s ease;
+            will-change: opacity, transform;
+        }
+
+        .timeline-item.is-visible .timeline-content {
+            background: rgba(10, 132, 255, 0.07);
+            border-color: rgba(10, 132, 255, 0.38);
+            box-shadow: 0 18px 42px rgba(10, 132, 255, 0.12);
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        .timeline-item.is-visible:nth-child(even) .timeline-content {
+            border-color: rgba(0, 255, 156, 0.34);
+            box-shadow: 0 18px 42px rgba(0, 255, 156, 0.1);
+        }
+
+        .timeline-content::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                105deg,
+                transparent 0%,
+                transparent 36%,
+                rgba(255, 255, 255, 0.08) 48%,
+                rgba(0, 255, 156, 0.12) 58%,
+                transparent 72%
+            );
+            opacity: 0;
+            transform: translateX(-120%);
+            pointer-events: none;
+        }
+
+        .timeline-item.is-visible .timeline-content::after {
+            animation: timelineCardSweep 1.05s ease 0.12s both;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            border-left-color: var(--neon-green);
+        }
+
+        .timeline-content h3 {
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+
+        .timeline-content .company {
+            font-size: 14px;
+            color: var(--primary-blue);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .timeline-content .date {
+            font-size: 12px;
+            color: var(--light-silver);
+            margin-bottom: 15px;
+        }
+
+        .timeline-content .timeline-meta {
+            font-size: 12px;
+            color: var(--silver);
+            margin-bottom: 12px;
+        }
+
+        .timeline-content ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .timeline-content li {
+            font-size: 14px;
+            color: var(--light-silver);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            opacity: 0;
+            transform: translateX(-10px);
+            transition: opacity 0.42s ease, transform 0.42s ease;
+        }
+
+        .timeline-item.is-visible .timeline-content li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-item.is-visible .timeline-content li:nth-child(1) { transition-delay: 0.22s; }
+        .timeline-item.is-visible .timeline-content li:nth-child(2) { transition-delay: 0.32s; }
+        .timeline-item.is-visible .timeline-content li:nth-child(3) { transition-delay: 0.42s; }
+        .timeline-item.is-visible .timeline-content li:nth-child(4) { transition-delay: 0.52s; }
+
+        .timeline-content li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-green);
+            font-weight: bold;
+        }
+#projects {
+            padding: 100px 40px;
+            background: var(--dark-bg);
+            min-height: auto;
+        }
+
+        .projects-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            animation: fadeInScale 0.6s ease backwards;
+            transition: all var(--transition-normal);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .project-card:nth-child(1) { animation-delay: 0.1s; }
+        .project-card:nth-child(2) { animation-delay: 0.2s; }
+        .project-card:nth-child(3) { animation-delay: 0.3s; }
+        .project-card:nth-child(4) { animation-delay: 0.4s; }
+        .project-card:nth-child(5) { animation-delay: 0.5s; }
+        .project-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(135deg, rgba(0, 255, 156, 0.08), transparent 45%);
+            pointer-events: none;
+        }
+
+        .project-card:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(10, 132, 255, 0.2);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-title {
+            font-family: var(--font-heading);
+            font-size: 20px;
+            color: var(--white);
+            font-weight: 700;
+        }
+
+        .project-icon {
+            font-size: 24px;
+            color: var(--neon-green);
+        }
+
+        .project-type {
+            display: inline-flex;
+            align-self: flex-start;
+            margin-bottom: 14px;
+            padding: 4px 10px;
+            border-radius: 4px;
+            background: rgba(0, 255, 156, 0.12);
+            border: 1px solid rgba(0, 255, 156, 0.35);
+            color: var(--neon-green);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-description {
+            color: var(--light-silver);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex-grow: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .tech-tag {
+            background: rgba(10, 132, 255, 0.2);
+            color: var(--primary-blue);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 12px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .project-link {
+            flex: 1;
+            padding: 8px 12px;
+            background: rgba(10, 132, 255, 0.1);
+            color: var(--primary-blue);
+            border: 1px solid var(--primary-blue);
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+            text-align: center;
+            transition: all var(--transition-fast);
+        }
+
+        .project-link:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+        }
+
+        .project-link.disabled {
+            border-color: var(--border-color);
+            color: var(--light-silver);
+            pointer-events: none;
+        }
+
+        .projects-cta {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .projects-cta .btn {
+            width: 100%;
+        }
+#roadmap {
+            padding: 100px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .roadmap-progress {
+            background: linear-gradient(90deg, var(--primary-blue), var(--neon-green));
+            height: 6px;
+            border-radius: 3px;
+            margin-bottom: 60px;
+            overflow: hidden;
+            background-size: 200% 100%;
+            animation: shimmer 3s ease infinite;
+        }
+
+        .roadmap-progress-fill {
+            width: 0;
+            height: 100%;
+            animation: progressFill 2s ease forwards;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { background-position: 200% 0; }
+            50% { background-position: 0 0; }
+        }
+
+        .roadmap-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .roadmap-phase {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 30px;
+            animation: fadeInUp 0.6s ease backwards;
+            position: relative;
+            transition: all var(--transition-normal);
+            backdrop-filter: blur(10px);
+        }
+
+        .roadmap-phase:nth-child(1) { animation-delay: 0.1s; }
+        .roadmap-phase:nth-child(2) { animation-delay: 0.2s; }
+        .roadmap-phase:nth-child(3) { animation-delay: 0.3s; }
+        .roadmap-phase:nth-child(4) { animation-delay: 0.4s; }
+
+        .roadmap-phase:hover {
+            border-color: var(--primary-blue);
+            transform: translateY(-5px);
+        }
+
+        .phase-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .phase-badge.completed {
+            background: rgba(0, 255, 156, 0.2);
+            color: var(--neon-green);
+        }
+
+        .phase-badge.in-progress {
+            background: rgba(10, 132, 255, 0.2);
+            color: var(--primary-blue);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .phase-badge.upcoming {
+            background: rgba(192, 192, 192, 0.1);
+            color: var(--light-silver);
+        }
+
+        .phase-title {
+            font-family: var(--font-heading);
+            font-size: 18px;
+            color: var(--white);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .phase-items {
+            list-style: none;
+            padding: 0;
+        }
+
+        .phase-items li {
+            font-size: 13px;
+            color: var(--light-silver);
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .phase-items li::before {
+            content: '>';
+            position: absolute;
+            left: 0;
+            color: var(--neon-green);
+            font-weight: bold;
+        }
+#contact {
+            padding: 100px 40px;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: var(--primary-blue);
+            border-radius: 50%;
+            opacity: 0;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .contact-headline {
+            font-family: var(--font-heading);
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 30px;
+        }
+
+        .contact-headline span {
+            color: var(--neon-green);
+        }
+
+        .contact-socials {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+
+        .contact-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            color: var(--off-white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            margin-bottom: 30px;
+            background: rgba(10, 132, 255, 0.08);
+        }
+
+        .contact-email:hover {
+            color: var(--neon-green);
+            border-color: var(--neon-green);
+        }
+
+        .contact-social-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: rgba(10, 132, 255, 0.1);
+            border: 2px solid var(--primary-blue);
+            color: var(--primary-blue);
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-normal);
+        }
+
+        .contact-social-btn:hover {
+            background: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(10, 132, 255, 0.4);
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 13px;
+            color: var(--light-silver);
+            margin-bottom: 8px;
+            text-align: left;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            background: rgba(10, 132, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 12px 16px;
+            color: var(--white);
+            font-family: var(--font-primary);
+            font-size: 14px;
+            transition: all var(--transition-normal);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            background: rgba(10, 132, 255, 0.1);
+            box-shadow: 0 0 15px rgba(10, 132, 255, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-form button {
+            background: linear-gradient(135deg, var(--primary-blue), var(--bright-blue));
+            color: var(--white);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: 0 4px 15px rgba(10, 132, 255, 0.4);
+            transition: all var(--transition-normal);
+        }
+
+        .contact-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(10, 132, 255, 0.6);
+        }
+
+        .form-message {
+            padding: 12px 16px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            animation: fadeInUp 0.4s ease;
+        }
+
+        .form-message.success {
+            background: rgba(0, 255, 156, 0.2);
+            color: var(--neon-green);
+            border: 1px solid var(--neon-green);
+        }
+
+        .form-message.error {
+            background: rgba(255, 100, 100, 0.2);
+            color: #ff6464;
+            border: 1px solid #ff6464;
+        }
+
+        footer {
+            padding: 30px 40px;
+            text-align: center;
+            color: var(--light-silver);
+            font-size: 14px;
+            border-top: 1px solid var(--border-color);
+        }
+.reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .timeline::before,
+            .timeline-item,
+            .timeline-dot,
+            .timeline-content,
+            .timeline-content li {
+                opacity: 1;
+                transform: none;
+                transition: none;
+                animation: none;
+            }
+
+            .timeline-content::after {
+                display: none;
+            }
+        }
+@media (max-width: 768px) {
+            #navbar {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-mobile {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(5, 10, 15, 0.95);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                gap: 0;
+                padding: 20px;
+                max-height: calc(100vh - 70px);
+                overflow-y: auto;
+                z-index: 999;
+                display: none;
+            }
+
+            .nav-mobile.active {
+                display: flex;
+            }
+
+            .nav-mobile a {
+                padding: 14px 16px;
+                border: 1px solid transparent;
+                border-radius: 14px;
+                font-size: 16px;
+                color: var(--light-silver);
+                transition: all var(--transition-normal);
+            }
+
+            .nav-mobile a:hover,
+            .nav-mobile a.active {
+                color: var(--white);
+                background:
+                    linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(10, 132, 255, 0.1), rgba(0, 255, 156, 0.1)),
+                    rgba(255, 255, 255, 0.035);
+                border-color: rgba(0, 255, 156, 0.28);
+                box-shadow:
+                    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+                    0 10px 24px rgba(10, 132, 255, 0.16);
+                backdrop-filter: blur(16px) saturate(140%);
+                -webkit-backdrop-filter: blur(16px) saturate(140%);
+            }
+
+            .nav-mobile .language-switcher {
+                width: 100%;
+                margin-top: 10px;
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .nav-mobile .language-toggle {
+                width: 100%;
+                height: 44px;
+            }
+
+            .nav-mobile .language-menu {
+                position: static;
+                width: 100%;
+                margin-top: 10px;
+                transform-origin: top center;
+                display: none;
+            }
+
+            .nav-mobile .language-switcher.open .language-menu {
+                display: block;
+            }
+
+            .section-title {
+                font-size: 36px;
+                margin-bottom: 40px;
+            }
+
+            .section-subtitle {
+                margin: -22px auto 36px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .about-visual {
+                gap: 22px;
+            }
+
+            .about-avatar {
+                width: 250px;
+                height: 250px;
+            }
+
+            .about-neural-panel {
+                height: 280px;
+                width: min(100%, 360px);
+            }
+
+            .hero-name {
+                font-size: clamp(32px, 6vw, 60px);
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .hero-highlight {
+                width: 100%;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            #about, #skills, #experience, #projects, #roadmap, #contact {
+                padding: 60px 20px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-cta {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+
+            .roadmap-timeline {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline {
+                padding-left: 0;
+            }
+
+            .timeline::before,
+            .timeline-dot {
+                display: none;
+            }
+
+            .hero-socials {
+                gap: 15px;
+            }
+
+            .contact-headline {
+                font-size: 28px;
+            }
+
+            .learning-stack,
+            .stats-row {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-row {
+                gap: 18px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            #navbar {
+                padding: 0 15px;
+            }
+
+            .nav-logo {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .hero-name {
+                font-size: clamp(28px, 5vw, 48px);
+            }
+
+            .hero-title {
+                font-size: 18px;
+                height: 40px;
+            }
+
+            .btn {
+                padding: 12px 24px;
+                font-size: 14px;
+            }
+
+            .learning-stack {
+                gap: 8px;
+            }
+
+            .skill-chip {
+                font-size: 12px;
+                padding: 6px 12px;
+                min-height: 44px;
+            }
+
+            .hero-socials {
+                gap: 12px;
+            }
+
+            .social-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            #about, #skills, #experience, #projects, #roadmap, #contact {
+                padding: 40px 15px;
+            }
+
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-links {
+                flex-direction: column;
+            }
+
+            .contact-headline {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+<nav id="navbar">
+        <div class="nav-logo">LM</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact">Contact</a>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+                    <span class="language-flag flag-icon flag-us" data-current-flag aria-hidden="true"></span>
+                    <span class="language-code" data-current-code>EN</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="language-menu" role="menu" aria-label="Language options">
+                    <button type="button" data-language-option="en-US" role="menuitem"><span class="flag-icon flag-us" aria-hidden="true"></span><span>English</span></button>
+                    <button type="button" data-language-option="pt-BR" role="menuitem"><span class="flag-icon flag-br" aria-hidden="true"></span><span>Português</span></button>
+                    <button type="button" data-language-option="es-AR" role="menuitem"><span class="flag-icon flag-ar" aria-hidden="true"></span><span>Español</span></button>
+                    <button type="button" data-language-option="it-IT" role="menuitem"><span class="flag-icon flag-it" aria-hidden="true"></span><span>Italiano</span></button>
+                    <button type="button" data-language-option="ko-KR" role="menuitem"><span class="flag-icon flag-kr" aria-hidden="true"></span><span>한국어</span></button>
+                </div>
+            </div>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <nav class="nav-mobile" id="nav-mobile">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#roadmap">Roadmap</a>
+            <a href="#contact">Contact</a>
+            <div class="language-switcher" data-language-switcher>
+                <button class="language-toggle" type="button" aria-haspopup="true" aria-expanded="false" aria-label="Change language">
+                    <span class="language-flag flag-icon flag-us" data-current-flag aria-hidden="true"></span>
+                    <span class="language-code" data-current-code>EN</span>
+                    <i class="fas fa-chevron-down" aria-hidden="true"></i>
+                </button>
+                <div class="language-menu" role="menu" aria-label="Language options">
+                    <button type="button" data-language-option="en-US" role="menuitem"><span class="flag-icon flag-us" aria-hidden="true"></span><span>English</span></button>
+                    <button type="button" data-language-option="pt-BR" role="menuitem"><span class="flag-icon flag-br" aria-hidden="true"></span><span>Português</span></button>
+                    <button type="button" data-language-option="es-AR" role="menuitem"><span class="flag-icon flag-ar" aria-hidden="true"></span><span>Español</span></button>
+                    <button type="button" data-language-option="it-IT" role="menuitem"><span class="flag-icon flag-it" aria-hidden="true"></span><span>Italiano</span></button>
+                    <button type="button" data-language-option="ko-KR" role="menuitem"><span class="flag-icon flag-kr" aria-hidden="true"></span><span>한국어</span></button>
+                </div>
+            </div>
+        </nav>
+    </nav>
+    <section id="hero">
+        <canvas class="hero-canvas" id="heroCanvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-greeting">Hi, I'm</p>
+            <h1 class="hero-name">Lucas Melquiades</h1>
+            <div class="hero-title">
+                <span class="typing-text">
+                    <span id="typing"></span><span class="typing-cursor"></span>
+                </span>
+            </div>
+            <p class="hero-bio">
+                Junior Software Engineer moving intentionally toward Data, AI and Machine Learning Engineering.
+                Building a path from software delivery into data products,<br>ML pipelines, MLOps and
+                production-minded AI applications.
+            </p>
+            <span class="hero-brain" aria-hidden="true">🧠</span>
+            <div class="hero-highlights" aria-label="Professional focus">
+                <span class="hero-highlight hero-highlight-glow">Open to junior Data/AI/ML roles</span>
+            </div>
+            <a class="hero-certification" href="#" aria-label="AWS Certified Cloud Practitioner certification credential placeholder">
+                <img src="aws-certified-cloud-practitioner.png" alt="AWS Certified Cloud Practitioner badge">
+                <span class="hero-certification-text">
+                    <span class="hero-certification-title">AWS Certified Cloud Practitioner</span>
+                    <span class="hero-certification-subtitle">Credential</span>
+                </span>
+            </a>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior: 'smooth'})">
+                    <i class="fas fa-diagram-project"></i>
+                    View Work
+                </button>
+                <a class="btn btn-secondary" href="Lucas%20Melquiades%20Resume.pdf" download="Lucas Melquiades Resume.pdf">
+                    <i class="fas fa-file-arrow-down"></i>
+                    Download CV
+                </a>
+            </div>
+            <div class="hero-socials">
+                <a href="https://github.com/lucasmelquiadess" target="_blank" rel="noopener noreferrer" class="social-icon" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/lucasmelquiades/" target="_blank" rel="noopener noreferrer" class="social-icon" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://www.kaggle.com/lucasmelquiades" target="_blank" rel="noopener noreferrer" class="social-icon" title="Kaggle">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+<section id="about">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">
+            A software engineer with a data-first direction: building reliable systems, learning the ML lifecycle and turning domain problems into structured, testable products.
+        </p>
+        <div class="about-container">
+            <div class="about-visual">
+                <div class="about-avatar">
+                    <div class="avatar-circle">
+                        <img class="avatar-photo" src="lucas-profile-photo.jpeg" alt="Lucas Melquiades profile photo">
+                    </div>
+                </div>
+                <div class="about-neural-panel" aria-hidden="true">
+                    <canvas class="about-neural-canvas" id="aboutNeuralCanvas"></canvas>
+                </div>
+            </div>
+            <div class="about-text">
+                <h3>Engineering base, ML direction</h3>
+                <p>
+                    I bring a practical software base in corporate systems, APIs, Dynamics 365, C#/.NET,
+                    JavaScript, SQL Server, SSIS and Power BI, and I am channeling it into ML pipelines,
+                    model serving, MLOps and production-minded AI applications.
+                </p>
+                <p>
+                    My previous professional path also gave me strong business-context exposure: I built Excel and
+                    Power BI reporting workflows for legal operations, worked with due diligence and operational
+                    documentation, worked with SCRUM routines, and used SAP ERP in a regulated financial environment.
+                </p>
+                <p>
+                    My current trajectory is focused on Machine Learning Engineering, Data Engineering, AI systems,
+                    LLM/RAG applications and MLOps: clean pipelines, reproducible experiments, model APIs, cloud
+                    deployment and monitoring.
+                </p>
+                <div class="learning-stack">
+                    <span class="skill-chip">Python</span>
+                    <span class="skill-chip">Java</span>
+                    <span class="skill-chip">SQL</span>
+                    <span class="skill-chip">Pandas</span>
+                    <span class="skill-chip">NumPy</span>
+                    <span class="skill-chip">Scikit-learn</span>
+                    <span class="skill-chip">PyTorch</span>
+                    <span class="skill-chip">MLflow</span>
+                    <span class="skill-chip">FastAPI</span>
+                    <span class="skill-chip">Docker</span>
+                    <span class="skill-chip">Kubernetes</span>
+                    <span class="skill-chip">Cloud</span>
+                </div>
+                <div class="stats-row">
+                    <div class="stat">
+                        <div class="stat-number">2026</div>
+                        <div class="stat-label">Current software role</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">AWS</div>
+                        <div class="stat-label">Cloud Practitioner</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Languages studied</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="skills">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-subtitle">
+            Current working level: junior software engineering experience with hands-on enterprise exposure, while building depth in Data, ML, AI and Cloud foundations.
+        </p>
+        <div class="skills-container">
+            <div class="skill-category">
+                <h3>Data, Machine Learning & AI</h3>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Python for data analysis & scripts</span>
+                        <span class="skill-percentage">Practicing</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 64%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">SQL for queries & data exploration</span>
+                        <span class="skill-percentage">Hands-on</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 62%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Pandas, NumPy & exploratory analysis</span>
+                        <span class="skill-percentage">Practicing</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 58%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Scikit-learn & model evaluation fundamentals</span>
+                        <span class="skill-percentage">Studying</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 50%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">LLM apps, RAG concepts & prompt workflows</span>
+                        <span class="skill-percentage">Exploring</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 35%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Data Platforms, Cloud & Analytics</h3>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Power BI, Excel reporting & business dashboards</span>
+                        <span class="skill-percentage">Hands-on</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 72%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">SQL Server, SSIS & integrations</span>
+                        <span class="skill-percentage">Exposure</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 55%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">AWS cloud foundations</span>
+                        <span class="skill-percentage">Certified</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 68%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Azure, Power Platform & enterprise environments</span>
+                        <span class="skill-percentage">Learning</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 45%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skill-category">
+                <h3>Software Engineering</h3>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">C#/.NET, Dynamics 365, plugins & workflows</span>
+                        <span class="skill-percentage">Current role</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 66%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Java, Spring Boot & API design</span>
+                        <span class="skill-percentage">Projects</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 54%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">TypeScript, JavaScript, React, Node.js & NestJS</span>
+                        <span class="skill-percentage">Projects</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 52%;"></div>
+                    </div>
+                </div>
+                <div class="skill-item">
+                    <div class="skill-label">
+                        <span class="skill-name">Docker, Git, GitHub Actions & delivery basics</span>
+                        <span class="skill-percentage">Hands-on</span>
+                    </div>
+                    <div class="skill-bar">
+                        <div class="skill-bar-fill" style="--progress-value: 70%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="experience">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">
+            A path from legal operations and reporting into corporate software engineering, now directed toward Data, AI and ML Engineering.
+        </p>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Intern</h3>
+                    <p class="company">Atos</p>
+                    <p class="date">March 2026 - Present</p>
+                    <p class="timeline-meta">Remote - Sao Paulo, Brazil</p>
+                    <ul>
+                        <li>Academia Dynamics: develop, maintain and evolve Microsoft Dynamics 365 corporate solutions.</li>
+                        <li>Implement features, plugins, workflows, automations and integrations using C#/.NET, JavaScript and external APIs.</li>
+                        <li>Work with bug fixing, performance improvement, requirements gathering, validation, technical documentation, SQL Server and SSIS.</li>
+                        <li>Use enterprise delivery discipline as a foundation for reliable data and AI systems.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Legal Assistant</h3>
+                    <p class="company">CYMI do Brasil</p>
+                    <p class="date">June 2022 - July 2024</p>
+                    <p class="timeline-meta">Rio de Janeiro, Brazil</p>
+                    <ul>
+                        <li>Built Excel and Power BI reporting workflows with the technology team for legal demand tracking.</li>
+                        <li>Supported dashboards and reports that improved visibility over sector activity and operational status.</li>
+                        <li>Worked on due diligence and M&A reviews, structuring financial, legal and operational information.</li>
+                        <li>Created and managed contracts using Visual Law techniques, bidding support and insurance management routines.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Legal Consulting Intern</h3>
+                    <p class="company">AgeRio</p>
+                    <p class="date">December 2018 - December 2020</p>
+                    <p class="timeline-meta">Rio de Janeiro, Brazil</p>
+                    <ul>
+                        <li>Participated in LGPD implementation across financial contracts and internal policies.</li>
+                        <li>Handled acquisitions, contracting and sector payments through SAP ERP routines.</li>
+                        <li>Gained experience with regulated processes, documentation, data privacy and operational controls.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                    <h3>Volunteer - Logistics & Events</h3>
+                    <p class="company">Pyeongchang Organizing Committee for the 2018 Olympic & Paralympic Winter Games</p>
+                    <p class="date">January 2018 - February 2018</p>
+                    <p class="timeline-meta">Gangwon, South Korea</p>
+                    <ul>
+                        <li>Supported ceremonies production and reception for figure skating delegations.</li>
+                        <li>Worked in a multicultural, high-pressure event environment with operational precision.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+<section id="projects">
+        <div class="projects-container">
+            <h2 class="section-title">Selected Work</h2>
+            <p class="section-subtitle">
+                Public repositories, applied business work and learning artifacts that show the bridge between software engineering, data workflows and AI systems.
+            </p>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <span class="project-type">Automation MVP</span>
+                    <div class="project-header">
+                        <h3 class="project-title">Ticket Watch</h3>
+                        <span class="project-icon"><i class="fas fa-bell"></i></span>
+                    </div>
+                    <p class="project-description">
+                        TypeScript MVP that monitors public Ticketmaster Brasil event pages and sends availability alerts.
+                        Built with Node.js, Express, React, Vite, configurable monitoring and optional Twilio WhatsApp notifications.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Docker</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/lucasmelquiadess/Ticket-Watch" target="_blank" rel="noopener noreferrer" class="project-link">Repository</a>
+                        <a href="https://github.com/lucasmelquiadess/Ticket-Watch/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="project-link">README</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-type">Full-stack system</span>
+                    <div class="project-header">
+                        <h3 class="project-title">Ultimo Andar</h3>
+                        <span class="project-icon"><i class="fas fa-building-shield"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Property lease contract management system inspired by real operational pain. Includes Java/Spring API,
+                        React frontend, document generation, encrypted storage, audit logs, Docker and PostgreSQL-ready deployment.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Java 17</span>
+                        <span class="tech-tag">Spring Boot</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/lucasmelquiadess/Ultimo-Andar" target="_blank" rel="noopener noreferrer" class="project-link">Repository</a>
+                        <a href="https://github.com/lucasmelquiadess/Ultimo-Andar/blob/main/README.md" target="_blank" rel="noopener noreferrer" class="project-link">README</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <span class="project-type">ML roadmap + data lab</span>
+                    <div class="project-header">
+                        <h3 class="project-title">GitHub & Kaggle ML Portfolio</h3>
+                        <span class="project-icon"><i class="fas fa-code-branch"></i></span>
+                    </div>
+                    <p class="project-description">
+                        Combined public learning track for Machine Learning Engineering and data practice: GitHub README
+                        organized around ML, Data Engineering, AI apps and MLOps, plus Kaggle as a lab for notebooks,
+                        EDA, baseline models and evaluation practice.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">ML Engineering</span>
+                        <span class="tech-tag">Kaggle</span>
+                        <span class="tech-tag">EDA</span>
+                        <span class="tech-tag">MLOps</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/lucasmelquiadess" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+                        <a href="https://www.kaggle.com/lucasmelquiades" target="_blank" rel="noopener noreferrer" class="project-link">Kaggle</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="projects-cta">
+                <a href="https://github.com/lucasmelquiadess" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <i class="fab fa-github"></i>
+                    View GitHub
+                </a>
+                <a href="https://www.kaggle.com/lucasmelquiades" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+                    <i class="fab fa-kaggle"></i>
+                    View Kaggle
+                </a>
+                <a href="#" class="btn btn-secondary" aria-label="Tableau profile link placeholder">
+                    <i class="fas fa-chart-simple"></i>
+                    View Tableau
+                </a>
+            </div>
+        </div>
+    </section>
+<section id="roadmap">
+        <h2 class="section-title">Learning Journey</h2>
+        <p class="section-subtitle">
+            Current track: move from software delivery into production-minded ML systems, with strong data foundations, reproducible experiments and deployable AI applications.
+        </p>
+        <div class="roadmap-progress">
+            <div class="roadmap-progress-fill" style="--progress-value: 48%;"></div>
+        </div>
+
+        <div class="roadmap-timeline">
+            <div class="roadmap-phase">
+                <div class="phase-badge completed">Built</div>
+                <h3 class="phase-title">Software & Cloud Base</h3>
+                <ul class="phase-items">
+                    <li>Java, Spring Boot, C#/.NET and TypeScript</li>
+                    <li>APIs, integrations and corporate systems</li>
+                    <li>Docker, Git and delivery routines</li>
+                    <li>AWS Certified Cloud Practitioner foundation</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-badge completed">Applied</div>
+                <h3 class="phase-title">Data & Analytics</h3>
+                <ul class="phase-items">
+                    <li>SQL Server, SSIS and integration thinking</li>
+                    <li>Power BI dashboards and business reporting</li>
+                    <li>Python, Pandas, NumPy and exploratory analysis</li>
+                    <li>Data cleaning, validation and visualization</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-badge in-progress">In progress</div>
+                <h3 class="phase-title">ML Engineering</h3>
+                <ul class="phase-items">
+                    <li>Supervised learning, regression and classification</li>
+                    <li>Feature engineering and model evaluation</li>
+                    <li>Experiment tracking with MLflow-style workflows</li>
+                    <li>Model APIs with FastAPI and deployable services</li>
+                </ul>
+            </div>
+
+            <div class="roadmap-phase">
+                <div class="phase-badge upcoming">Next</div>
+                <h3 class="phase-title">AI Apps & MLOps</h3>
+                <ul class="phase-items">
+                    <li>LLM applications and RAG patterns</li>
+                    <li>Vector search and data pipelines for AI</li>
+                    <li>Monitoring, versioning and feedback loops</li>
+                    <li>Cloud deployment on AWS/Azure environments</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+<section id="contact">
+        <div class="particles" id="particles"></div>
+        <div class="contact-container">
+            <h2 class="contact-headline">Let's build something <span>intelligent</span> together<span>.</span></h2>
+            <a class="contact-email" href="mailto:lucasmelquiades.dev@gmail.com">
+                <i class="fas fa-envelope"></i>
+                lucasmelquiades.dev@gmail.com
+            </a>
+            
+            <div class="contact-socials">
+                <a href="https://www.linkedin.com/in/lucasmelquiades/" target="_blank" rel="noopener noreferrer" 
+                   class="contact-social-btn" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/lucasmelquiadess" target="_blank" rel="noopener noreferrer" 
+                   class="contact-social-btn" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.kaggle.com/lucasmelquiades" target="_blank" rel="noopener noreferrer" 
+                   class="contact-social-btn" title="Kaggle">
+                    <i class="fab fa-kaggle"></i>
+                </a>
+                <a href="https://api.whatsapp.com/qr/LVFXUDE5H5NAF1" target="_blank" rel="noopener noreferrer" 
+                   class="contact-social-btn" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" maxlength="60" autocomplete="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        inputmode="email"
+                        autocomplete="email"
+                        maxlength="254"
+                        pattern="[a-zA-Z0-9._%+\-]+@([a-zA-Z0-9\-]+\.)+[a-zA-Z]{2,}"
+                        title="Use a valid email format, like email@email.com or email@email.com.br"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Send</button>
+                <div id="formMessage"></div>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lucas Melquiades | Software Engineer &bull; Data, ML &amp; AI ☁️</p>
+    </footer>
+
+    <script>
+        class NeuralNetworkAnimation {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.nodes = [];
+                this.connections = [];
+                this.rafId = null;
+                this.running = true;
+                
+                this.resizeCanvas();
+                this.createNetwork();
+                this.animate();
+                
+                window.addEventListener('resize', () => this.resizeCanvas());
+            }
+
+            resizeCanvas() {
+                this.canvas.width = this.canvas.offsetWidth;
+                this.canvas.height = this.canvas.offsetHeight;
+            }
+
+            createNetwork() {
+                const cols = Math.ceil(this.canvas.width / 100);
+                const rows = Math.ceil(this.canvas.height / 100);
+                for (let i = 0; i < cols; i++) {
+                    for (let j = 0; j < rows; j++) {
+                        this.nodes.push({
+                            x: i * 100 + Math.random() * 50,
+                            y: j * 100 + Math.random() * 50,
+                            vx: (Math.random() - 0.5) * 0.5,
+                            vy: (Math.random() - 0.5) * 0.5,
+                            radius: Math.random() * 2 + 1,
+                            pulse: Math.random() * Math.PI * 2
+                        });
+                    }
+                }
+                for (let i = 0; i < this.nodes.length; i++) {
+                    for (let j = i + 1; j < this.nodes.length; j++) {
+                        const dx = this.nodes[i].x - this.nodes[j].x;
+                        const dy = this.nodes[i].y - this.nodes[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            this.connections.push({
+                                from: i,
+                                to: j,
+                                distance,
+                                animate: Math.random() * 2 * Math.PI
+                            });
+                        }
+                    }
+                }
+            }
+
+            animate() {
+                if (!this.running) return;
+
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                this.nodes.forEach(node => {
+                    node.x += node.vx;
+                    node.y += node.vy;
+                    node.pulse += 0.02;
+                    if (node.x < 0 || node.x > this.canvas.width) node.vx *= -1;
+                    if (node.y < 0 || node.y > this.canvas.height) node.vy *= -1;
+
+                    node.x = Math.max(0, Math.min(this.canvas.width, node.x));
+                    node.y = Math.max(0, Math.min(this.canvas.height, node.y));
+                    const glow = Math.sin(node.pulse) * 0.5 + 0.5;
+                    const gradient = this.ctx.createRadialGradient(
+                        node.x, node.y, 0,
+                        node.x, node.y, node.radius * 3
+                    );
+                    
+                    gradient.addColorStop(0, `rgba(10, 132, 255, ${glow * 0.8})`);
+                    gradient.addColorStop(1, `rgba(10, 132, 255, 0)`);
+                    
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.fillRect(
+                        node.x - node.radius * 3,
+                        node.y - node.radius * 3,
+                        node.radius * 6,
+                        node.radius * 6
+                    );
+                    this.ctx.fillStyle = `rgba(0, 255, 156, ${0.5 + glow * 0.5})`;
+                    this.ctx.beginPath();
+                    this.ctx.arc(node.x, node.y, node.radius, 0, Math.PI * 2);
+                    this.ctx.fill();
+                });
+                this.connections.forEach(conn => {
+                    const fromNode = this.nodes[conn.from];
+                    const toNode = this.nodes[conn.to];
+
+                    conn.animate += 0.02;
+                    const opacity = (Math.sin(conn.animate) * 0.3 + 0.4) * (1 - conn.distance / 150);
+                    
+                    this.ctx.strokeStyle = `rgba(10, 132, 255, ${opacity})`;
+                    this.ctx.lineWidth = 1;
+                    this.ctx.beginPath();
+                    this.ctx.moveTo(fromNode.x, fromNode.y);
+                    this.ctx.lineTo(toNode.x, toNode.y);
+                    this.ctx.stroke();
+                    const t = (conn.animate % 1);
+                    const signalX = fromNode.x + (toNode.x - fromNode.x) * t;
+                    const signalY = fromNode.y + (toNode.y - fromNode.y) * t;
+
+                    this.ctx.fillStyle = `rgba(0, 255, 156, ${0.8 - t * 0.8})`;
+                    this.ctx.beginPath();
+                    this.ctx.arc(signalX, signalY, 2, 0, Math.PI * 2);
+                    this.ctx.fill();
+                });
+
+                this.rafId = requestAnimationFrame(() => this.animate());
+            }
+
+            setRunning(running) {
+                if (this.running === running) return;
+
+                this.running = running;
+                if (running) {
+                    this.animate();
+                } else if (this.rafId) {
+                    cancelAnimationFrame(this.rafId);
+                    this.rafId = null;
+                }
+            }
+        }
+
+        class AboutNeural3DAnimation {
+            constructor(canvas) {
+                this.canvas = canvas;
+                this.ctx = canvas.getContext('2d');
+                this.nodes = [];
+                this.angle = 0;
+                this.rafId = null;
+                this.running = true;
+                this.resizeCanvas();
+                this.createNetwork();
+                this.animate();
+                window.addEventListener('resize', () => {
+                    this.resizeCanvas();
+                    this.createNetwork();
+                });
+            }
+
+            resizeCanvas() {
+                const ratio = window.devicePixelRatio || 1;
+                this.width = this.canvas.offsetWidth;
+                this.height = this.canvas.offsetHeight;
+                this.canvas.width = this.width * ratio;
+                this.canvas.height = this.height * ratio;
+                this.ctx.setTransform(ratio, 0, 0, ratio, 0, 0);
+            }
+
+            createNetwork() {
+                this.nodes = [];
+                const count = this.width < 340 ? 24 : 34;
+                for (let i = 0; i < count; i++) {
+                    const band = i / Math.max(1, count - 1);
+                    this.nodes.push({
+                        x: (Math.random() - 0.5) * 260,
+                        y: (band - 0.5) * 360 + (Math.random() - 0.5) * 48,
+                        z: (Math.random() - 0.5) * 260,
+                        pulse: Math.random() * Math.PI * 2,
+                        size: 1.8 + Math.random() * 2.2
+                    });
+                }
+            }
+
+            project(node) {
+                const cos = Math.cos(this.angle);
+                const sin = Math.sin(this.angle);
+                const x = node.x * cos - node.z * sin;
+                const z = node.x * sin + node.z * cos;
+                const perspective = 460 / (460 + z);
+                return {
+                    x: this.width / 2 + x * perspective,
+                    y: this.height / 2 + node.y * perspective,
+                    z,
+                    scale: perspective
+                };
+            }
+
+            animate() {
+                if (!this.running) return;
+
+                this.ctx.clearRect(0, 0, this.width, this.height);
+                this.angle += 0.006;
+
+                const projected = this.nodes.map(node => {
+                    node.pulse += 0.035;
+                    return { node, point: this.project(node) };
+                }).sort((a, b) => a.point.z - b.point.z);
+
+                for (let i = 0; i < projected.length; i++) {
+                    for (let j = i + 1; j < projected.length; j++) {
+                        const a = projected[i].point;
+                        const b = projected[j].point;
+                        const dx = a.x - b.x;
+                        const dy = a.y - b.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 96) {
+                            const opacity = (1 - distance / 96) * 0.42;
+                            this.ctx.strokeStyle = `rgba(10, 132, 255, ${opacity})`;
+                            this.ctx.lineWidth = 1;
+                            this.ctx.beginPath();
+                            this.ctx.moveTo(a.x, a.y);
+                            this.ctx.lineTo(b.x, b.y);
+                            this.ctx.stroke();
+                        }
+                    }
+                }
+
+                projected.forEach(({ node, point }) => {
+                    const glow = Math.sin(node.pulse) * 0.5 + 0.5;
+                    const radius = node.size * point.scale;
+                    const gradient = this.ctx.createRadialGradient(point.x, point.y, 0, point.x, point.y, radius * 7);
+                    gradient.addColorStop(0, `rgba(0, 255, 156, ${0.85 * glow})`);
+                    gradient.addColorStop(0.35, `rgba(10, 132, 255, ${0.35 * glow})`);
+                    gradient.addColorStop(1, 'rgba(10, 132, 255, 0)');
+                    this.ctx.fillStyle = gradient;
+                    this.ctx.beginPath();
+                    this.ctx.arc(point.x, point.y, radius * 7, 0, Math.PI * 2);
+                    this.ctx.fill();
+
+                    this.ctx.fillStyle = `rgba(0, 255, 156, ${0.62 + glow * 0.38})`;
+                    this.ctx.beginPath();
+                    this.ctx.arc(point.x, point.y, Math.max(1.6, radius), 0, Math.PI * 2);
+                    this.ctx.fill();
+                });
+
+                this.rafId = requestAnimationFrame(() => this.animate());
+            }
+
+            setRunning(running) {
+                if (this.running === running) return;
+
+                this.running = running;
+                if (running) {
+                    this.animate();
+                } else if (this.rafId) {
+                    cancelAnimationFrame(this.rafId);
+                    this.rafId = null;
+                }
+            }
+        }
+
+        const canvasAnimations = [];
+        const canvasVisibilityObserver = 'IntersectionObserver' in window
+            ? new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    const item = canvasAnimations.find(animation => animation.canvas === entry.target);
+                    if (!item) return;
+
+                    item.inView = entry.isIntersecting;
+                    item.animation.setRunning(entry.isIntersecting && !document.hidden);
+                });
+            }, { rootMargin: '180px 0px', threshold: 0 })
+            : null;
+
+        function trackCanvasAnimation(canvas, animation) {
+            const item = { canvas, animation, inView: true };
+            canvasAnimations.push(item);
+
+            if (canvasVisibilityObserver) {
+                canvasVisibilityObserver.observe(canvas);
+            }
+
+            animation.setRunning(!document.hidden);
+        }
+
+        document.addEventListener('visibilitychange', () => {
+            canvasAnimations.forEach(item => {
+                item.animation.setRunning(!document.hidden && item.inView);
+            });
+        });
+
+        window.addEventListener('load', () => {
+            const canvas = document.getElementById('heroCanvas');
+            if (canvas) {
+                trackCanvasAnimation(canvas, new NeuralNetworkAnimation(canvas));
+            }
+
+            const aboutCanvas = document.getElementById('aboutNeuralCanvas');
+            if (aboutCanvas) {
+                trackCanvasAnimation(aboutCanvas, new AboutNeural3DAnimation(aboutCanvas));
+            }
+        });
+        const languageOptions = {
+            'en-US': { flagClass: 'flag-us', code: 'EN', label: 'English', htmlLang: 'en-US' },
+            'pt-BR': { flagClass: 'flag-br', code: 'PT', label: 'Português', htmlLang: 'pt-BR' },
+            'es-AR': { flagClass: 'flag-ar', code: 'ES', label: 'Español', htmlLang: 'es-419' },
+            'it-IT': { flagClass: 'flag-it', code: 'IT', label: 'Italiano', htmlLang: 'it-IT' },
+            'ko-KR': { flagClass: 'flag-kr', code: 'KO', label: '한국어', htmlLang: 'ko-KR' }
+        };
+
+        const translations = {
+            'en-US': {
+                pageTitle: 'Portfolio – Data, ML, AI and Cloud',
+                metaDescription: 'Portfolio of Lucas Melquiades, a junior software engineer transitioning into Data, AI and Machine Learning Engineering with experience in Dynamics 365, C#/.NET, JavaScript, SQL, Power BI and cloud foundations.',
+                languageAria: 'Change language',
+                languageMenuAria: 'Language options',
+                roles: ['ML Engineer', 'Data & AI'],
+                navAbout: 'About',
+                navSkills: 'Skills',
+                navExperience: 'Experience',
+                navProjects: 'Projects',
+                navRoadmap: 'Roadmap',
+                navContact: 'Contact',
+                heroGreeting: "Hi, I'm",
+                heroBio: 'Junior Software Engineer moving intentionally toward Data, AI and Machine Learning Engineering. Building a path from software delivery into data products,<br>ML pipelines, MLOps and production-minded AI applications.',
+                heroHighlight: 'Open to junior Data/AI/ML roles',
+                certAria: 'AWS Certified Cloud Practitioner certification credential placeholder',
+                certSubtitle: 'Credential',
+                viewWork: 'View Work',
+                downloadCv: 'Download CV',
+                aboutTitle: 'About Me',
+                aboutSubtitle: 'A software engineer with a data-first direction: building reliable systems, learning the ML lifecycle and turning domain problems into structured, testable products.',
+                aboutHeading: 'Engineering base, ML direction',
+                aboutP1: 'I bring a practical software base in corporate systems, APIs, Dynamics 365, C#/.NET, JavaScript, SQL Server, SSIS and Power BI, and I am channeling it into ML pipelines, model serving, MLOps and production-minded AI applications.',
+                aboutP2: 'My previous professional path also gave me strong business-context exposure: I built Excel and Power BI reporting workflows for legal operations, worked with due diligence and operational documentation, worked with SCRUM routines, and used SAP ERP in a regulated financial environment.',
+                aboutP3: 'My current trajectory is focused on Machine Learning Engineering, Data Engineering, AI systems, LLM/RAG applications and MLOps: clean pipelines, reproducible experiments, model APIs, cloud deployment and monitoring.',
+                statRole: 'Current software role',
+                statCloud: 'Cloud Practitioner',
+                statLanguages: 'Languages studied',
+                skillsTitle: 'Technical Skills',
+                skillsSubtitle: 'Current working level: junior software engineering experience with hands-on enterprise exposure, while building depth in Data, ML, AI and Cloud foundations.',
+                skillsCatData: 'Data, Machine Learning & AI',
+                skillPython: 'Python for data analysis & scripts',
+                skillSql: 'SQL for queries & data exploration',
+                skillPandas: 'Pandas, NumPy & exploratory analysis',
+                skillSklearn: 'Scikit-learn & model evaluation fundamentals',
+                skillLlm: 'LLM apps, RAG concepts & prompt workflows',
+                skillsCatPlatforms: 'Data Platforms, Cloud & Analytics',
+                skillPowerBi: 'Power BI, Excel reporting & business dashboards',
+                skillSqlServer: 'SQL Server, SSIS & integrations',
+                skillAws: 'AWS cloud foundations',
+                skillAzure: 'Azure, Power Platform & enterprise environments',
+                skillsCatSoftware: 'Software Engineering',
+                skillCsharp: 'C#/.NET, Dynamics 365, plugins & workflows',
+                skillJava: 'Java, Spring Boot & API design',
+                skillTs: 'TypeScript, JavaScript, React, Node.js & NestJS',
+                skillDocker: 'Docker, Git, GitHub Actions & delivery basics',
+                statusPracticing: 'Practicing',
+                statusHandsOn: 'Hands-on',
+                statusStudying: 'Studying',
+                statusExploring: 'Exploring',
+                statusExposure: 'Exposure',
+                statusCertified: 'Certified',
+                statusLearning: 'Learning',
+                statusCurrentRole: 'Current role',
+                statusProjects: 'Projects',
+                experienceTitle: 'Experience',
+                experienceSubtitle: 'A path from legal operations and reporting into corporate software engineering, now directed toward Data, AI and ML Engineering.',
+                exp1Title: 'Intern',
+                exp1Date: 'March 2026 - Present',
+                exp1Location: 'Remote - Sao Paulo, Brazil',
+                exp1Li1: 'Academia Dynamics: develop, maintain and evolve Microsoft Dynamics 365 corporate solutions.',
+                exp1Li2: 'Implement features, plugins, workflows, automations and integrations using C#/.NET, JavaScript and external APIs.',
+                exp1Li3: 'Work with bug fixing, performance improvement, requirements gathering, validation, technical documentation, SQL Server and SSIS.',
+                exp1Li4: 'Use enterprise delivery discipline as a foundation for reliable data and AI systems.',
+                exp2Title: 'Legal Assistant',
+                exp2Date: 'June 2022 - July 2024',
+                exp2Location: 'Rio de Janeiro, Brazil',
+                exp2Li1: 'Built Excel and Power BI reporting workflows with the technology team for legal demand tracking.',
+                exp2Li2: 'Supported dashboards and reports that improved visibility over sector activity and operational status.',
+                exp2Li3: 'Worked on due diligence and M&A reviews, structuring financial, legal and operational information.',
+                exp2Li4: 'Created and managed contracts using Visual Law techniques, bidding support and insurance management routines.',
+                exp3Title: 'Legal Consulting Intern',
+                exp3Date: 'December 2018 - December 2020',
+                exp3Location: 'Rio de Janeiro, Brazil',
+                exp3Li1: 'Participated in LGPD implementation across financial contracts and internal policies.',
+                exp3Li2: 'Handled acquisitions, contracting and sector payments through SAP ERP routines.',
+                exp3Li3: 'Gained experience with regulated processes, documentation, data privacy and operational controls.',
+                exp4Title: 'Volunteer - Logistics & Events',
+                exp4Date: 'January 2018 - February 2018',
+                exp4Location: 'Gangwon, South Korea',
+                exp4Li1: 'Supported ceremonies production and reception for figure skating delegations.',
+                exp4Li2: 'Worked in a multicultural, high-pressure event environment with operational precision.',
+                projectsTitle: 'Selected Work',
+                projectsSubtitle: 'Public repositories, applied business work and learning artifacts that show the bridge between software engineering, data workflows and AI systems.',
+                project1Type: 'Automation MVP',
+                project1Desc: 'TypeScript MVP that monitors public Ticketmaster Brasil event pages and sends availability alerts. Built with Node.js, Express, React, Vite, configurable monitoring and optional Twilio WhatsApp notifications.',
+                project2Type: 'Full-stack system',
+                project2Desc: 'Property lease contract management system inspired by real operational pain. Includes Java/Spring API, React frontend, document generation, encrypted storage, audit logs, Docker and PostgreSQL-ready deployment.',
+                project3Type: 'ML roadmap + data lab',
+                project3Title: 'GitHub & Kaggle ML Portfolio',
+                project3Desc: 'Combined public learning track for Machine Learning Engineering and data practice: GitHub README organized around ML, Data Engineering, AI apps and MLOps, plus Kaggle as a lab for notebooks, EDA, baseline models and evaluation practice.',
+                repository: 'Repository',
+                readme: 'README',
+                viewGitHub: 'View GitHub',
+                viewKaggle: 'View Kaggle',
+                viewTableau: 'View Tableau',
+                tableauAria: 'Tableau profile link placeholder',
+                roadmapTitle: 'Learning Journey',
+                roadmapSubtitle: 'Current track: move from software delivery into production-minded ML systems, with strong data foundations, reproducible experiments and deployable AI applications.',
+                phaseBuilt: 'Built',
+                phaseApplied: 'Applied',
+                phaseProgress: 'In progress',
+                phaseNext: 'Next',
+                phase1Title: 'Software & Cloud Base',
+                phase1Li1: 'Java, Spring Boot, C#/.NET and TypeScript',
+                phase1Li2: 'APIs, integrations and corporate systems',
+                phase1Li3: 'Docker, Git and delivery routines',
+                phase1Li4: 'AWS Certified Cloud Practitioner foundation',
+                phase2Title: 'Data & Analytics',
+                phase2Li1: 'SQL Server, SSIS and integration thinking',
+                phase2Li2: 'Power BI dashboards and business reporting',
+                phase2Li3: 'Python, Pandas, NumPy and exploratory analysis',
+                phase2Li4: 'Data cleaning, validation and visualization',
+                phase3Title: 'ML Engineering',
+                phase3Li1: 'Supervised learning, regression and classification',
+                phase3Li2: 'Feature engineering and model evaluation',
+                phase3Li3: 'Experiment tracking with MLflow-style workflows',
+                phase3Li4: 'Model APIs with FastAPI and deployable services',
+                phase4Title: 'AI Apps & MLOps',
+                phase4Li1: 'LLM applications and RAG patterns',
+                phase4Li2: 'Vector search and data pipelines for AI',
+                phase4Li3: 'Monitoring, versioning and feedback loops',
+                phase4Li4: 'Cloud deployment on AWS/Azure environments',
+                contactHeadline: "Let's build something <span>intelligent</span> together<span>.</span>",
+                nameLabel: 'Name',
+                emailLabel: 'Email',
+                messageLabel: 'Message',
+                emailTitle: 'Use a valid email format, like email@email.com or email@email.com.br',
+                send: 'Send',
+                formSuccess: 'Thanks, {name}. Your email client should open with the message ready to send.',
+                footer: '&copy; 2026 Lucas Melquiades | Software Engineer &bull; Data, ML &amp; AI ☁️'
+            },
+            'pt-BR': {
+                pageTitle: 'Portfólio – Data, ML, AI and Cloud',
+                metaDescription: 'Portfólio de Lucas Melquiades, Junior Software Engineer em transição para Data, AI e Machine Learning Engineering, com experiência em Dynamics 365, C#/.NET, JavaScript, SQL, Power BI e fundamentos de Cloud.',
+                languageAria: 'Trocar idioma',
+                languageMenuAria: 'Opções de idioma',
+                roles: ['ML Engineer', 'Data & AI'],
+                navAbout: 'Sobre',
+                navSkills: 'Skills',
+                navExperience: 'Experiência',
+                navProjects: 'Projetos',
+                navRoadmap: 'Roadmap',
+                navContact: 'Contato',
+                heroGreeting: 'Olá, eu sou',
+                heroBio: 'Junior Software Engineer avançando intencionalmente para Data, AI e Machine Learning Engineering. Construindo uma trajetória de software delivery para data products,<br>ML pipelines, MLOps e AI applications com mentalidade de produção.',
+                heroHighlight: 'Aberto a vagas júnior em Data/AI/ML',
+                certAria: 'Placeholder do link da credencial AWS Certified Cloud Practitioner',
+                certSubtitle: 'Credencial',
+                viewWork: 'Ver Projetos',
+                downloadCv: 'Baixar CV',
+                aboutTitle: 'Sobre Mim',
+                aboutSubtitle: 'Software engineer com direção data-first: construindo sistemas confiáveis, aprendendo o ciclo de vida de ML e transformando problemas de domínio em produtos estruturados e testáveis.',
+                aboutHeading: 'Base de engenharia, direção em ML',
+                aboutP1: 'Trago uma base prática de software em sistemas corporativos, APIs, Dynamics 365, C#/.NET, JavaScript, SQL Server, SSIS e Power BI, e estou canalizando isso para ML pipelines, model serving, MLOps e AI applications com mentalidade de produção.',
+                aboutP2: 'Minha trajetória profissional anterior também me deu forte exposição a contexto de negócio: construí fluxos de reporting em Excel e Power BI para operações jurídicas, trabalhei com due diligence e documentação operacional, atuei com rotinas SCRUM e usei SAP ERP em um ambiente financeiro regulado.',
+                aboutP3: 'Minha trajetória atual é focada em Machine Learning Engineering, Data Engineering, AI systems, LLM/RAG applications e MLOps: pipelines limpos, experimentos reproduzíveis, model APIs, cloud deployment e monitoring.',
+                statRole: 'Cargo atual em software',
+                statCloud: 'Cloud Practitioner',
+                statLanguages: 'Idiomas estudados',
+                skillsTitle: 'Technical Skills',
+                skillsSubtitle: 'Nível atual de trabalho: experiência júnior em software engineering com exposição hands-on a ambientes corporativos, enquanto aprofundo Data, ML, AI e fundamentos de Cloud.',
+                skillsCatData: 'Data, Machine Learning & AI',
+                skillPython: 'Python para data analysis & scripts',
+                skillSql: 'SQL para queries & data exploration',
+                skillPandas: 'Pandas, NumPy & exploratory analysis',
+                skillSklearn: 'Scikit-learn & fundamentos de model evaluation',
+                skillLlm: 'LLM apps, conceitos de RAG & prompt workflows',
+                skillsCatPlatforms: 'Data Platforms, Cloud & Analytics',
+                skillPowerBi: 'Power BI, Excel reporting & business dashboards',
+                skillSqlServer: 'SQL Server, SSIS & integrações',
+                skillAws: 'Fundamentos de AWS cloud',
+                skillAzure: 'Azure, Power Platform & ambientes corporativos',
+                skillsCatSoftware: 'Software Engineering',
+                skillCsharp: 'C#/.NET, Dynamics 365, plugins & workflows',
+                skillJava: 'Java, Spring Boot & API design',
+                skillTs: 'TypeScript, JavaScript, React, Node.js & NestJS',
+                skillDocker: 'Docker, Git, GitHub Actions & delivery basics',
+                statusPracticing: 'Praticando',
+                statusHandsOn: 'Hands-on',
+                statusStudying: 'Estudando',
+                statusExploring: 'Explorando',
+                statusExposure: 'Exposição',
+                statusCertified: 'Certificado',
+                statusLearning: 'Aprendendo',
+                statusCurrentRole: 'Cargo atual',
+                statusProjects: 'Projetos',
+                experienceTitle: 'Experiência',
+                experienceSubtitle: 'Uma trajetória de operações jurídicas e reporting para corporate software engineering, agora direcionada para Data, AI e ML Engineering.',
+                exp1Title: 'Estagiário',
+                exp1Date: 'Março de 2026 - Presente',
+                exp1Location: 'Remoto - São Paulo, Brasil',
+                exp1Li1: 'Academia Dynamics: desenvolver, manter e evoluir soluções corporativas em Microsoft Dynamics 365.',
+                exp1Li2: 'Implementar features, plugins, workflows, automações e integrações usando C#/.NET, JavaScript e APIs externas.',
+                exp1Li3: 'Atuar com bug fixing, melhoria de performance, levantamento de requisitos, validação, documentação técnica, SQL Server e SSIS.',
+                exp1Li4: 'Usar disciplina de delivery corporativo como base para sistemas confiáveis de Data e AI.',
+                exp2Title: 'Assistente Jurídico',
+                exp2Date: 'Junho de 2022 - Julho de 2024',
+                exp2Location: 'Rio de Janeiro, Brasil',
+                exp2Li1: 'Construí workflows de reporting em Excel e Power BI com o time de tecnologia para acompanhamento de demandas jurídicas.',
+                exp2Li2: 'Apoiei dashboards e relatórios que melhoraram a visibilidade sobre atividades do setor e status operacional.',
+                exp2Li3: 'Atuei em due diligence e revisões de M&A, estruturando informações financeiras, jurídicas e operacionais.',
+                exp2Li4: 'Criei e gerenciei contratos com técnicas de Visual Law, apoio a licitações e rotinas de gestão de seguros.',
+                exp3Title: 'Estagiário de Consultoria Jurídica',
+                exp3Date: 'Dezembro de 2018 - Dezembro de 2020',
+                exp3Location: 'Rio de Janeiro, Brasil',
+                exp3Li1: 'Participei da implementação da LGPD em contratos financeiros e políticas internas.',
+                exp3Li2: 'Tratei aquisições, contratações e pagamentos setoriais por meio de rotinas em SAP ERP.',
+                exp3Li3: 'Ganhei experiência com processos regulados, documentação, data privacy e controles operacionais.',
+                exp4Title: 'Voluntário - Logistics & Events',
+                exp4Date: 'Janeiro de 2018 - Fevereiro de 2018',
+                exp4Location: 'Gangwon, Coreia do Sul',
+                exp4Li1: 'Apoiei a produção de cerimônias e recepção de delegações de patinação artística.',
+                exp4Li2: 'Trabalhei em um ambiente multicultural e de alta pressão, com precisão operacional.',
+                projectsTitle: 'Projetos Selecionados',
+                projectsSubtitle: 'Repositórios públicos, trabalhos de negócio aplicados e artefatos de aprendizado que mostram a ponte entre software engineering, data workflows e AI systems.',
+                project1Type: 'Automation MVP',
+                project1Desc: 'MVP em TypeScript que monitora páginas públicas de eventos da Ticketmaster Brasil e envia alertas de disponibilidade. Construído com Node.js, Express, React, Vite, monitoramento configurável e notificações opcionais via Twilio WhatsApp.',
+                project2Type: 'Full-stack system',
+                project2Desc: 'Sistema de gestão de contratos de locação inspirado em dor operacional real. Inclui Java/Spring API, frontend em React, geração de documentos, armazenamento criptografado, audit logs, Docker e deployment preparado para PostgreSQL.',
+                project3Type: 'ML roadmap + data lab',
+                project3Title: 'GitHub & Kaggle ML Portfolio',
+                project3Desc: 'Trilha pública combinada de aprendizado em Machine Learning Engineering e prática de dados: GitHub README organizado em torno de ML, Data Engineering, AI apps e MLOps, além do Kaggle como lab para notebooks, EDA, baseline models e evaluation practice.',
+                repository: 'Repositório',
+                readme: 'README',
+                viewGitHub: 'Ver GitHub',
+                viewKaggle: 'Ver Kaggle',
+                viewTableau: 'Ver Tableau',
+                tableauAria: 'Placeholder do link do perfil no Tableau',
+                roadmapTitle: 'Learning Journey',
+                roadmapSubtitle: 'Trilha atual: migrar de software delivery para sistemas de ML com mentalidade de produção, com bases fortes em dados, experimentos reproduzíveis e AI applications implantáveis.',
+                phaseBuilt: 'Construído',
+                phaseApplied: 'Aplicado',
+                phaseProgress: 'Em progresso',
+                phaseNext: 'Próximo',
+                phase1Title: 'Base de Software & Cloud',
+                phase1Li1: 'Java, Spring Boot, C#/.NET e TypeScript',
+                phase1Li2: 'APIs, integrações e sistemas corporativos',
+                phase1Li3: 'Docker, Git e rotinas de delivery',
+                phase1Li4: 'Base AWS Certified Cloud Practitioner',
+                phase2Title: 'Data & Analytics',
+                phase2Li1: 'SQL Server, SSIS e pensamento de integração',
+                phase2Li2: 'Dashboards em Power BI e business reporting',
+                phase2Li3: 'Python, Pandas, NumPy e exploratory analysis',
+                phase2Li4: 'Data cleaning, validação e visualização',
+                phase3Title: 'ML Engineering',
+                phase3Li1: 'Supervised learning, regression e classification',
+                phase3Li2: 'Feature engineering e model evaluation',
+                phase3Li3: 'Experiment tracking com workflows no estilo MLflow',
+                phase3Li4: 'Model APIs com FastAPI e serviços implantáveis',
+                phase4Title: 'AI Apps & MLOps',
+                phase4Li1: 'LLM applications e padrões de RAG',
+                phase4Li2: 'Vector search e data pipelines para AI',
+                phase4Li3: 'Monitoring, versioning e feedback loops',
+                phase4Li4: 'Cloud deployment em ambientes AWS/Azure',
+                contactHeadline: 'Vamos construir algo <span>inteligente</span> juntos<span>.</span>',
+                nameLabel: 'Nome',
+                emailLabel: 'E-mail',
+                messageLabel: 'Mensagem',
+                emailTitle: 'Use um formato de e-mail válido, como email@email.com ou email@email.com.br',
+                send: 'Enviar',
+                formSuccess: 'Obrigado, {name}. Seu cliente de e-mail deve abrir com a mensagem pronta para envio.',
+                footer: '&copy; 2026 Lucas Melquiades | Software Engineer &bull; Data, ML &amp; AI ☁️'
+            },
+            'es-AR': {
+                pageTitle: 'Portfolio – Data, ML, AI and Cloud',
+                metaDescription: 'Portfolio de Lucas Melquiades, Junior Software Engineer en transición hacia Data, AI y Machine Learning Engineering, con experiencia en Dynamics 365, C#/.NET, JavaScript, SQL, Power BI y fundamentos de Cloud.',
+                languageAria: 'Cambiar idioma',
+                languageMenuAria: 'Opciones de idioma',
+                roles: ['ML Engineer', 'Data & AI'],
+                navAbout: 'Sobre mí',
+                navSkills: 'Skills',
+                navExperience: 'Experiencia',
+                navProjects: 'Proyectos',
+                navRoadmap: 'Roadmap',
+                navContact: 'Contacto',
+                heroGreeting: 'Hola, soy',
+                heroBio: 'Junior Software Engineer avanzando intencionalmente hacia Data, AI y Machine Learning Engineering. Construyendo un camino desde software delivery hacia data products,<br>ML pipelines, MLOps y AI applications con mentalidad de producción.',
+                heroHighlight: 'Abierto a roles junior en Data/AI/ML',
+                certAria: 'Placeholder del enlace a la credencial AWS Certified Cloud Practitioner',
+                certSubtitle: 'Credencial',
+                viewWork: 'Ver Proyectos',
+                downloadCv: 'Descargar CV',
+                aboutTitle: 'Sobre Mí',
+                aboutSubtitle: 'Software engineer con dirección data-first: construyendo sistemas confiables, aprendiendo el ciclo de vida de ML y convirtiendo problemas de dominio en productos estructurados y testeables.',
+                aboutHeading: 'Base de ingeniería, dirección en ML',
+                aboutP1: 'Traigo una base práctica de software en sistemas corporativos, APIs, Dynamics 365, C#/.NET, JavaScript, SQL Server, SSIS y Power BI, y la estoy llevando hacia ML pipelines, model serving, MLOps y AI applications con mentalidad de producción.',
+                aboutP2: 'Mi trayectoria profesional anterior también me dio fuerte exposición al contexto de negocio: construí workflows de reporting en Excel y Power BI para operaciones legales, trabajé con due diligence y documentación operativa, participé en rutinas SCRUM y usé SAP ERP en un entorno financiero regulado.',
+                aboutP3: 'Mi trayectoria actual está enfocada en Machine Learning Engineering, Data Engineering, AI systems, LLM/RAG applications y MLOps: pipelines limpios, experimentos reproducibles, model APIs, cloud deployment y monitoring.',
+                statRole: 'Rol actual en software',
+                statCloud: 'Cloud Practitioner',
+                statLanguages: 'Idiomas estudiados',
+                skillsTitle: 'Technical Skills',
+                skillsSubtitle: 'Nivel actual de trabajo: experiencia junior en software engineering con exposición hands-on a entornos corporativos, mientras profundizo en Data, ML, AI y fundamentos de Cloud.',
+                skillsCatData: 'Data, Machine Learning & AI',
+                skillPython: 'Python para data analysis & scripts',
+                skillSql: 'SQL para queries & data exploration',
+                skillPandas: 'Pandas, NumPy & exploratory analysis',
+                skillSklearn: 'Scikit-learn & fundamentos de model evaluation',
+                skillLlm: 'LLM apps, conceptos de RAG & prompt workflows',
+                skillsCatPlatforms: 'Data Platforms, Cloud & Analytics',
+                skillPowerBi: 'Power BI, Excel reporting & business dashboards',
+                skillSqlServer: 'SQL Server, SSIS & integraciones',
+                skillAws: 'Fundamentos de AWS cloud',
+                skillAzure: 'Azure, Power Platform & entornos corporativos',
+                skillsCatSoftware: 'Software Engineering',
+                skillCsharp: 'C#/.NET, Dynamics 365, plugins & workflows',
+                skillJava: 'Java, Spring Boot & API design',
+                skillTs: 'TypeScript, JavaScript, React, Node.js & NestJS',
+                skillDocker: 'Docker, Git, GitHub Actions & delivery basics',
+                statusPracticing: 'Practicando',
+                statusHandsOn: 'Hands-on',
+                statusStudying: 'Estudiando',
+                statusExploring: 'Explorando',
+                statusExposure: 'Exposición',
+                statusCertified: 'Certificado',
+                statusLearning: 'Aprendiendo',
+                statusCurrentRole: 'Rol actual',
+                statusProjects: 'Proyectos',
+                experienceTitle: 'Experiencia',
+                experienceSubtitle: 'Un camino desde operaciones legales y reporting hacia corporate software engineering, ahora orientado a Data, AI y ML Engineering.',
+                exp1Title: 'Pasante',
+                exp1Date: 'Marzo de 2026 - Presente',
+                exp1Location: 'Remoto - São Paulo, Brasil',
+                exp1Li1: 'Academia Dynamics: desarrollar, mantener y evolucionar soluciones corporativas en Microsoft Dynamics 365.',
+                exp1Li2: 'Implementar features, plugins, workflows, automatizaciones e integraciones usando C#/.NET, JavaScript y APIs externas.',
+                exp1Li3: 'Trabajar con bug fixing, mejora de performance, relevamiento de requisitos, validación, documentación técnica, SQL Server y SSIS.',
+                exp1Li4: 'Usar disciplina de delivery corporativo como base para sistemas confiables de Data y AI.',
+                exp2Title: 'Asistente Legal',
+                exp2Date: 'Junio de 2022 - Julio de 2024',
+                exp2Location: 'Río de Janeiro, Brasil',
+                exp2Li1: 'Construí workflows de reporting en Excel y Power BI con el equipo de tecnología para seguimiento de demandas legales.',
+                exp2Li2: 'Apoyé dashboards y reportes que mejoraron la visibilidad sobre la actividad del sector y el estado operativo.',
+                exp2Li3: 'Trabajé en due diligence y revisiones de M&A, estructurando información financiera, legal y operativa.',
+                exp2Li4: 'Creé y gestioné contratos con técnicas de Visual Law, soporte a licitaciones y rutinas de gestión de seguros.',
+                exp3Title: 'Pasante de Consultoría Legal',
+                exp3Date: 'Diciembre de 2018 - Diciembre de 2020',
+                exp3Location: 'Río de Janeiro, Brasil',
+                exp3Li1: 'Participé en la implementación de LGPD en contratos financieros y políticas internas.',
+                exp3Li2: 'Gestioné adquisiciones, contrataciones y pagos del sector mediante rutinas en SAP ERP.',
+                exp3Li3: 'Gané experiencia con procesos regulados, documentación, data privacy y controles operativos.',
+                exp4Title: 'Voluntario - Logistics & Events',
+                exp4Date: 'Enero de 2018 - Febrero de 2018',
+                exp4Location: 'Gangwon, Corea del Sur',
+                exp4Li1: 'Apoyé la producción de ceremonias y recepción de delegaciones de patinaje artístico.',
+                exp4Li2: 'Trabajé en un entorno multicultural y de alta presión con precisión operativa.',
+                projectsTitle: 'Trabajos Seleccionados',
+                projectsSubtitle: 'Repositorios públicos, trabajo de negocio aplicado y artefactos de aprendizaje que muestran el puente entre software engineering, data workflows y AI systems.',
+                project1Type: 'Automation MVP',
+                project1Desc: 'MVP en TypeScript que monitorea páginas públicas de eventos de Ticketmaster Brasil y envía alertas de disponibilidad. Construido con Node.js, Express, React, Vite, monitoreo configurable y notificaciones opcionales vía Twilio WhatsApp.',
+                project2Type: 'Full-stack system',
+                project2Desc: 'Sistema de gestión de contratos de alquiler inspirado en dolor operativo real. Incluye Java/Spring API, frontend en React, generación de documentos, almacenamiento cifrado, audit logs, Docker y deployment listo para PostgreSQL.',
+                project3Type: 'ML roadmap + data lab',
+                project3Title: 'GitHub & Kaggle ML Portfolio',
+                project3Desc: 'Ruta pública combinada de aprendizaje en Machine Learning Engineering y práctica de datos: GitHub README organizado alrededor de ML, Data Engineering, AI apps y MLOps, además de Kaggle como lab para notebooks, EDA, baseline models y evaluation practice.',
+                repository: 'Repositorio',
+                readme: 'README',
+                viewGitHub: 'Ver GitHub',
+                viewKaggle: 'Ver Kaggle',
+                viewTableau: 'Ver Tableau',
+                tableauAria: 'Placeholder del enlace al perfil de Tableau',
+                roadmapTitle: 'Learning Journey',
+                roadmapSubtitle: 'Ruta actual: pasar de software delivery a sistemas de ML con mentalidad de producción, con bases sólidas en datos, experimentos reproducibles y AI applications desplegables.',
+                phaseBuilt: 'Construido',
+                phaseApplied: 'Aplicado',
+                phaseProgress: 'En progreso',
+                phaseNext: 'Siguiente',
+                phase1Title: 'Base de Software & Cloud',
+                phase1Li1: 'Java, Spring Boot, C#/.NET y TypeScript',
+                phase1Li2: 'APIs, integraciones y sistemas corporativos',
+                phase1Li3: 'Docker, Git y rutinas de delivery',
+                phase1Li4: 'Base AWS Certified Cloud Practitioner',
+                phase2Title: 'Data & Analytics',
+                phase2Li1: 'SQL Server, SSIS y pensamiento de integración',
+                phase2Li2: 'Dashboards en Power BI y business reporting',
+                phase2Li3: 'Python, Pandas, NumPy y exploratory analysis',
+                phase2Li4: 'Data cleaning, validación y visualización',
+                phase3Title: 'ML Engineering',
+                phase3Li1: 'Supervised learning, regression y classification',
+                phase3Li2: 'Feature engineering y model evaluation',
+                phase3Li3: 'Experiment tracking con workflows estilo MLflow',
+                phase3Li4: 'Model APIs con FastAPI y servicios desplegables',
+                phase4Title: 'AI Apps & MLOps',
+                phase4Li1: 'LLM applications y patrones RAG',
+                phase4Li2: 'Vector search y data pipelines para AI',
+                phase4Li3: 'Monitoring, versioning y feedback loops',
+                phase4Li4: 'Cloud deployment en entornos AWS/Azure',
+                contactHeadline: 'Construyamos algo <span>inteligente</span> juntos<span>.</span>',
+                nameLabel: 'Nombre',
+                emailLabel: 'Email',
+                messageLabel: 'Mensaje',
+                emailTitle: 'Usa un formato de email válido, como email@email.com o email@email.com.br',
+                send: 'Enviar',
+                formSuccess: 'Gracias, {name}. Tu cliente de email debería abrirse con el mensaje listo para enviar.',
+                footer: '&copy; 2026 Lucas Melquiades | Software Engineer &bull; Data, ML &amp; AI ☁️'
+            },
+            'it-IT': {
+                pageTitle: 'Portfolio – Data, ML, AI and Cloud',
+                metaDescription: 'Portfolio di Lucas Melquiades, Junior Software Engineer in transizione verso Data, AI e Machine Learning Engineering, con esperienza in Dynamics 365, C#/.NET, JavaScript, SQL, Power BI e basi Cloud.',
+                languageAria: 'Cambia lingua',
+                languageMenuAria: 'Opzioni lingua',
+                roles: ['ML Engineer', 'Data & AI'],
+                navAbout: 'Chi sono',
+                navSkills: 'Skill',
+                navExperience: 'Esperienza',
+                navProjects: 'Progetti',
+                navRoadmap: 'Roadmap',
+                navContact: 'Contatto',
+                heroGreeting: 'Ciao, sono',
+                heroBio: 'Junior Software Engineer che sta orientando il proprio percorso verso Data, AI e Machine Learning Engineering. Sto costruendo un passaggio da software delivery a data products,<br>ML pipelines, MLOps e AI applications con mentalità di produzione.',
+                heroHighlight: 'Aperto a ruoli junior in Data/AI/ML',
+                certAria: 'Placeholder del link alla credenziale AWS Certified Cloud Practitioner',
+                certSubtitle: 'Credenziale',
+                viewWork: 'Vedi Progetti',
+                downloadCv: 'Scarica CV',
+                aboutTitle: 'Chi Sono',
+                aboutSubtitle: 'Software engineer con direzione data-first: costruisco sistemi affidabili, studio il ciclo di vita ML e trasformo problemi di dominio in prodotti strutturati e testabili.',
+                aboutHeading: 'Base engineering, direzione ML',
+                aboutP1: 'Porto una base pratica di software in sistemi corporate, APIs, Dynamics 365, C#/.NET, JavaScript, SQL Server, SSIS e Power BI, e la sto indirizzando verso ML pipelines, model serving, MLOps e AI applications con mentalità di produzione.',
+                aboutP2: 'Il mio percorso professionale precedente mi ha dato anche una forte esposizione al contesto business: ho costruito workflow di reporting in Excel e Power BI per legal operations, lavorato con due diligence e documentazione operativa, seguito routine SCRUM e usato SAP ERP in un ambiente finanziario regolato.',
+                aboutP3: 'La mia traiettoria attuale è focalizzata su Machine Learning Engineering, Data Engineering, AI systems, LLM/RAG applications e MLOps: pipeline pulite, esperimenti riproducibili, model APIs, cloud deployment e monitoring.',
+                statRole: 'Ruolo software attuale',
+                statCloud: 'Cloud Practitioner',
+                statLanguages: 'Lingue studiate',
+                skillsTitle: 'Technical Skills',
+                skillsSubtitle: 'Livello attuale: esperienza junior in software engineering con esposizione hands-on ad ambienti corporate, mentre approfondisco Data, ML, AI e fondamenti Cloud.',
+                skillsCatData: 'Data, Machine Learning & AI',
+                skillPython: 'Python per data analysis & scripts',
+                skillSql: 'SQL per queries & data exploration',
+                skillPandas: 'Pandas, NumPy & exploratory analysis',
+                skillSklearn: 'Scikit-learn & fondamenti di model evaluation',
+                skillLlm: 'LLM apps, concetti RAG & prompt workflows',
+                skillsCatPlatforms: 'Data Platforms, Cloud & Analytics',
+                skillPowerBi: 'Power BI, Excel reporting & business dashboards',
+                skillSqlServer: 'SQL Server, SSIS & integrazioni',
+                skillAws: 'Fondamenti AWS cloud',
+                skillAzure: 'Azure, Power Platform & ambienti enterprise',
+                skillsCatSoftware: 'Software Engineering',
+                skillCsharp: 'C#/.NET, Dynamics 365, plugins & workflows',
+                skillJava: 'Java, Spring Boot & API design',
+                skillTs: 'TypeScript, JavaScript, React, Node.js & NestJS',
+                skillDocker: 'Docker, Git, GitHub Actions & delivery basics',
+                statusPracticing: 'In pratica',
+                statusHandsOn: 'Hands-on',
+                statusStudying: 'In studio',
+                statusExploring: 'Esplorando',
+                statusExposure: 'Esposizione',
+                statusCertified: 'Certificato',
+                statusLearning: 'Apprendo',
+                statusCurrentRole: 'Ruolo attuale',
+                statusProjects: 'Progetti',
+                experienceTitle: 'Esperienza',
+                experienceSubtitle: 'Un percorso da legal operations e reporting verso corporate software engineering, ora orientato a Data, AI e ML Engineering.',
+                exp1Title: 'Stagista',
+                exp1Date: 'Marzo 2026 - Presente',
+                exp1Location: 'Remoto - São Paulo, Brasile',
+                exp1Li1: 'Academia Dynamics: sviluppare, mantenere ed evolvere soluzioni corporate in Microsoft Dynamics 365.',
+                exp1Li2: 'Implementare features, plugins, workflows, automazioni e integrazioni usando C#/.NET, JavaScript e APIs esterne.',
+                exp1Li3: 'Lavorare su bug fixing, miglioramento performance, raccolta requisiti, validazione, documentazione tecnica, SQL Server e SSIS.',
+                exp1Li4: 'Usare disciplina di delivery corporate come base per sistemi affidabili di Data e AI.',
+                exp2Title: 'Assistente Legale',
+                exp2Date: 'Giugno 2022 - Luglio 2024',
+                exp2Location: 'Rio de Janeiro, Brasile',
+                exp2Li1: 'Ho costruito workflow di reporting in Excel e Power BI con il team tecnologia per il tracking delle richieste legali.',
+                exp2Li2: 'Ho supportato dashboards e report che hanno migliorato la visibilità sulle attività del settore e sullo stato operativo.',
+                exp2Li3: 'Ho lavorato su due diligence e revisioni M&A, strutturando informazioni finanziarie, legali e operative.',
+                exp2Li4: 'Ho creato e gestito contratti usando tecniche di Visual Law, supporto gare e routine di gestione assicurativa.',
+                exp3Title: 'Stagista in Consulenza Legale',
+                exp3Date: 'Dicembre 2018 - Dicembre 2020',
+                exp3Location: 'Rio de Janeiro, Brasile',
+                exp3Li1: 'Ho partecipato all’implementazione LGPD su contratti finanziari e policy interne.',
+                exp3Li2: 'Ho gestito acquisizioni, contrattazioni e pagamenti di settore tramite routine SAP ERP.',
+                exp3Li3: 'Ho maturato esperienza con processi regolati, documentazione, data privacy e controlli operativi.',
+                exp4Title: 'Volontario - Logistics & Events',
+                exp4Date: 'Gennaio 2018 - Febbraio 2018',
+                exp4Location: 'Gangwon, Corea del Sud',
+                exp4Li1: 'Ho supportato la produzione delle cerimonie e l’accoglienza delle delegazioni di pattinaggio artistico.',
+                exp4Li2: 'Ho lavorato in un ambiente multiculturale e ad alta pressione con precisione operativa.',
+                projectsTitle: 'Lavori Selezionati',
+                projectsSubtitle: 'Repository pubblici, lavoro business applicato e artefatti di apprendimento che mostrano il ponte tra software engineering, data workflows e AI systems.',
+                project1Type: 'Automation MVP',
+                project1Desc: 'MVP in TypeScript che monitora pagine pubbliche di eventi Ticketmaster Brasil e invia alert di disponibilità. Costruito con Node.js, Express, React, Vite, monitoraggio configurabile e notifiche opzionali via Twilio WhatsApp.',
+                project2Type: 'Full-stack system',
+                project2Desc: 'Sistema di gestione contratti di locazione ispirato a un dolore operativo reale. Include Java/Spring API, frontend React, generazione documenti, storage cifrato, audit logs, Docker e deployment pronto per PostgreSQL.',
+                project3Type: 'ML roadmap + data lab',
+                project3Title: 'GitHub & Kaggle ML Portfolio',
+                project3Desc: 'Percorso pubblico combinato di apprendimento in Machine Learning Engineering e pratica dati: GitHub README organizzato su ML, Data Engineering, AI apps e MLOps, più Kaggle come lab per notebooks, EDA, baseline models ed evaluation practice.',
+                repository: 'Repository',
+                readme: 'README',
+                viewGitHub: 'Vedi GitHub',
+                viewKaggle: 'Vedi Kaggle',
+                viewTableau: 'Vedi Tableau',
+                tableauAria: 'Placeholder del link al profilo Tableau',
+                roadmapTitle: 'Learning Journey',
+                roadmapSubtitle: 'Percorso attuale: passare da software delivery a sistemi ML con mentalità di produzione, con solide basi dati, esperimenti riproducibili e AI applications deployabili.',
+                phaseBuilt: 'Costruito',
+                phaseApplied: 'Applicato',
+                phaseProgress: 'In corso',
+                phaseNext: 'Prossimo',
+                phase1Title: 'Base Software & Cloud',
+                phase1Li1: 'Java, Spring Boot, C#/.NET e TypeScript',
+                phase1Li2: 'APIs, integrazioni e sistemi corporate',
+                phase1Li3: 'Docker, Git e routine di delivery',
+                phase1Li4: 'Base AWS Certified Cloud Practitioner',
+                phase2Title: 'Data & Analytics',
+                phase2Li1: 'SQL Server, SSIS e pensiero di integrazione',
+                phase2Li2: 'Dashboard Power BI e business reporting',
+                phase2Li3: 'Python, Pandas, NumPy ed exploratory analysis',
+                phase2Li4: 'Data cleaning, validazione e visualizzazione',
+                phase3Title: 'ML Engineering',
+                phase3Li1: 'Supervised learning, regression e classification',
+                phase3Li2: 'Feature engineering e model evaluation',
+                phase3Li3: 'Experiment tracking con workflow stile MLflow',
+                phase3Li4: 'Model APIs con FastAPI e servizi deployabili',
+                phase4Title: 'AI Apps & MLOps',
+                phase4Li1: 'LLM applications e pattern RAG',
+                phase4Li2: 'Vector search e data pipelines per AI',
+                phase4Li3: 'Monitoring, versioning e feedback loops',
+                phase4Li4: 'Cloud deployment su ambienti AWS/Azure',
+                contactHeadline: 'Costruiamo qualcosa di <span>intelligente</span> insieme<span>.</span>',
+                nameLabel: 'Nome',
+                emailLabel: 'Email',
+                messageLabel: 'Messaggio',
+                emailTitle: 'Usa un formato email valido, come email@email.com o email@email.com.br',
+                send: 'Invia',
+                formSuccess: 'Grazie, {name}. Il tuo client email dovrebbe aprirsi con il messaggio pronto per l’invio.',
+                footer: '&copy; 2026 Lucas Melquiades | Software Engineer &bull; Data, ML &amp; AI ☁️'
+            },
+            'ko-KR': {
+                pageTitle: 'Portfolio – Data, ML, AI and Cloud',
+                metaDescription: 'Lucas Melquiades의 포트폴리오입니다. Dynamics 365, C#/.NET, JavaScript, SQL, Power BI, Cloud foundations 경험을 바탕으로 Data, AI, Machine Learning Engineering으로 성장 중인 Junior Software Engineer입니다.',
+                languageAria: '언어 변경',
+                languageMenuAria: '언어 옵션',
+                roles: ['ML Engineer', 'Data & AI'],
+                navAbout: '소개',
+                navSkills: 'Skills',
+                navExperience: '경험',
+                navProjects: '프로젝트',
+                navRoadmap: 'Roadmap',
+                navContact: '연락',
+                heroGreeting: '안녕하세요, 저는',
+                heroBio: 'Junior Software Engineer로서 Data, AI 및 Machine Learning Engineering 방향으로 의도적으로 성장하고 있습니다. software delivery 기반을 data products,<br>ML pipelines, MLOps, production-minded AI applications로 확장하고 있습니다.',
+                heroHighlight: 'Junior Data/AI/ML 역할에 열려 있음',
+                certAria: 'AWS Certified Cloud Practitioner credential placeholder link',
+                certSubtitle: 'Credential',
+                viewWork: '프로젝트 보기',
+                downloadCv: 'CV 다운로드',
+                aboutTitle: '소개',
+                aboutSubtitle: 'data-first 방향성을 가진 software engineer입니다. 안정적인 시스템을 만들고, ML lifecycle을 학습하며, 도메인 문제를 구조화되고 테스트 가능한 제품으로 바꾸고 있습니다.',
+                aboutHeading: 'Engineering base, ML direction',
+                aboutP1: 'Corporate systems, APIs, Dynamics 365, C#/.NET, JavaScript, SQL Server, SSIS, Power BI에 대한 실무 기반을 가지고 있으며, 이를 ML pipelines, model serving, MLOps, production-minded AI applications로 확장하고 있습니다.',
+                aboutP2: '이전 커리어에서는 비즈니스 맥락에 대한 강한 이해를 쌓았습니다. legal operations를 위한 Excel 및 Power BI reporting workflows를 만들고, due diligence와 operational documentation을 다루었으며, SCRUM routines와 규제 금융 환경의 SAP ERP를 경험했습니다.',
+                aboutP3: '현재 방향은 Machine Learning Engineering, Data Engineering, AI systems, LLM/RAG applications, MLOps에 집중되어 있습니다: clean pipelines, reproducible experiments, model APIs, cloud deployment, monitoring.',
+                statRole: '현재 software 역할',
+                statCloud: 'Cloud Practitioner',
+                statLanguages: '학습 중인 언어',
+                skillsTitle: 'Technical Skills',
+                skillsSubtitle: '현재 수준: junior software engineering 경험과 enterprise 환경의 hands-on exposure를 바탕으로 Data, ML, AI, Cloud foundations를 깊게 쌓고 있습니다.',
+                skillsCatData: 'Data, Machine Learning & AI',
+                skillPython: 'Python for data analysis & scripts',
+                skillSql: 'SQL for queries & data exploration',
+                skillPandas: 'Pandas, NumPy & exploratory analysis',
+                skillSklearn: 'Scikit-learn & model evaluation fundamentals',
+                skillLlm: 'LLM apps, RAG concepts & prompt workflows',
+                skillsCatPlatforms: 'Data Platforms, Cloud & Analytics',
+                skillPowerBi: 'Power BI, Excel reporting & business dashboards',
+                skillSqlServer: 'SQL Server, SSIS & integrations',
+                skillAws: 'AWS cloud foundations',
+                skillAzure: 'Azure, Power Platform & enterprise environments',
+                skillsCatSoftware: 'Software Engineering',
+                skillCsharp: 'C#/.NET, Dynamics 365, plugins & workflows',
+                skillJava: 'Java, Spring Boot & API design',
+                skillTs: 'TypeScript, JavaScript, React, Node.js & NestJS',
+                skillDocker: 'Docker, Git, GitHub Actions & delivery basics',
+                statusPracticing: '연습 중',
+                statusHandsOn: 'Hands-on',
+                statusStudying: '학습 중',
+                statusExploring: '탐색 중',
+                statusExposure: '경험 있음',
+                statusCertified: 'Certified',
+                statusLearning: '학습 중',
+                statusCurrentRole: '현재 역할',
+                statusProjects: 'Projects',
+                experienceTitle: '경험',
+                experienceSubtitle: 'legal operations와 reporting에서 corporate software engineering으로 이어진 경험을 바탕으로, 지금은 Data, AI, ML Engineering 방향으로 나아가고 있습니다.',
+                exp1Title: 'Intern',
+                exp1Date: '2026년 3월 - 현재',
+                exp1Location: 'Remote - São Paulo, Brazil',
+                exp1Li1: 'Academia Dynamics: Microsoft Dynamics 365 corporate solutions를 개발, 유지보수, 개선합니다.',
+                exp1Li2: 'C#/.NET, JavaScript, external APIs를 사용해 features, plugins, workflows, automations, integrations를 구현합니다.',
+                exp1Li3: 'Bug fixing, performance improvement, requirements gathering, validation, technical documentation, SQL Server, SSIS를 다룹니다.',
+                exp1Li4: '신뢰성 있는 Data 및 AI systems를 만들기 위한 기반으로 enterprise delivery discipline을 적용합니다.',
+                exp2Title: 'Legal Assistant',
+                exp2Date: '2022년 6월 - 2024년 7월',
+                exp2Location: 'Rio de Janeiro, Brazil',
+                exp2Li1: '기술팀과 함께 legal demand tracking을 위한 Excel 및 Power BI reporting workflows를 구축했습니다.',
+                exp2Li2: '부서 활동과 operational status의 가시성을 높이는 dashboards 및 reports를 지원했습니다.',
+                exp2Li3: 'Due diligence와 M&A reviews에서 financial, legal, operational information을 구조화했습니다.',
+                exp2Li4: 'Visual Law 기법을 활용한 계약서 작성/관리, bidding support, insurance management routines를 수행했습니다.',
+                exp3Title: 'Legal Consulting Intern',
+                exp3Date: '2018년 12월 - 2020년 12월',
+                exp3Location: 'Rio de Janeiro, Brazil',
+                exp3Li1: 'Financial contracts와 internal policies 전반의 LGPD implementation에 참여했습니다.',
+                exp3Li2: 'SAP ERP routines를 통해 acquisitions, contracting, sector payments를 처리했습니다.',
+                exp3Li3: 'Regulated processes, documentation, data privacy, operational controls 경험을 쌓았습니다.',
+                exp4Title: 'Volunteer - Logistics & Events',
+                exp4Date: '2018년 1월 - 2018년 2월',
+                exp4Location: 'Gangwon, South Korea',
+                exp4Li1: 'Figure skating delegations를 위한 ceremonies production과 reception을 지원했습니다.',
+                exp4Li2: '멀티컬처와 high-pressure event environment에서 operational precision을 가지고 일했습니다.',
+                projectsTitle: 'Selected Work',
+                projectsSubtitle: 'Public repositories, applied business work, learning artifacts를 통해 software engineering, data workflows, AI systems 사이의 연결을 보여줍니다.',
+                project1Type: 'Automation MVP',
+                project1Desc: 'Public Ticketmaster Brasil event pages를 모니터링하고 availability alerts를 보내는 TypeScript MVP입니다. Node.js, Express, React, Vite, configurable monitoring, optional Twilio WhatsApp notifications로 구축했습니다.',
+                project2Type: 'Full-stack system',
+                project2Desc: '실제 operational pain에서 영감을 받은 property lease contract management system입니다. Java/Spring API, React frontend, document generation, encrypted storage, audit logs, Docker, PostgreSQL-ready deployment를 포함합니다.',
+                project3Type: 'ML roadmap + data lab',
+                project3Title: 'GitHub & Kaggle ML Portfolio',
+                project3Desc: 'Machine Learning Engineering과 data practice를 위한 public learning track입니다. GitHub README는 ML, Data Engineering, AI apps, MLOps 중심으로 정리되어 있고, Kaggle은 notebooks, EDA, baseline models, evaluation practice를 위한 lab으로 사용합니다.',
+                repository: 'Repository',
+                readme: 'README',
+                viewGitHub: 'GitHub 보기',
+                viewKaggle: 'Kaggle 보기',
+                viewTableau: 'Tableau 보기',
+                tableauAria: 'Tableau profile link placeholder',
+                roadmapTitle: 'Learning Journey',
+                roadmapSubtitle: '현재 트랙: software delivery에서 production-minded ML systems로 이동하며, strong data foundations, reproducible experiments, deployable AI applications를 쌓고 있습니다.',
+                phaseBuilt: 'Built',
+                phaseApplied: 'Applied',
+                phaseProgress: '진행 중',
+                phaseNext: 'Next',
+                phase1Title: 'Software & Cloud Base',
+                phase1Li1: 'Java, Spring Boot, C#/.NET and TypeScript',
+                phase1Li2: 'APIs, integrations and corporate systems',
+                phase1Li3: 'Docker, Git and delivery routines',
+                phase1Li4: 'AWS Certified Cloud Practitioner foundation',
+                phase2Title: 'Data & Analytics',
+                phase2Li1: 'SQL Server, SSIS and integration thinking',
+                phase2Li2: 'Power BI dashboards and business reporting',
+                phase2Li3: 'Python, Pandas, NumPy and exploratory analysis',
+                phase2Li4: 'Data cleaning, validation and visualization',
+                phase3Title: 'ML Engineering',
+                phase3Li1: 'Supervised learning, regression and classification',
+                phase3Li2: 'Feature engineering and model evaluation',
+                phase3Li3: 'Experiment tracking with MLflow-style workflows',
+                phase3Li4: 'Model APIs with FastAPI and deployable services',
+                phase4Title: 'AI Apps & MLOps',
+                phase4Li1: 'LLM applications and RAG patterns',
+                phase4Li2: 'Vector search and data pipelines for AI',
+                phase4Li3: 'Monitoring, versioning and feedback loops',
+                phase4Li4: 'Cloud deployment on AWS/Azure environments',
+                contactHeadline: '함께 <span>intelligent한</span> 것을 만들어 봅시다<span>.</span>',
+                nameLabel: '이름',
+                emailLabel: '이메일',
+                messageLabel: '메시지',
+                emailTitle: 'email@email.com 또는 email@email.com.br 같은 유효한 email 형식을 사용하세요',
+                send: '보내기',
+                formSuccess: '{name}님, 감사합니다. 메시지가 준비된 상태로 email client가 열립니다.',
+                footer: '&copy; 2026 Lucas Melquiades | Software Engineer &bull; Data, ML &amp; AI ☁️'
+            }
+        };
+
+        const translationTargets = [
+            ['navAbout', ['.nav-links a[href="#about"]', '.nav-mobile a[href="#about"]']],
+            ['navSkills', ['.nav-links a[href="#skills"]', '.nav-mobile a[href="#skills"]']],
+            ['navExperience', ['.nav-links a[href="#experience"]', '.nav-mobile a[href="#experience"]']],
+            ['navProjects', ['.nav-links a[href="#projects"]', '.nav-mobile a[href="#projects"]']],
+            ['navRoadmap', ['.nav-links a[href="#roadmap"]', '.nav-mobile a[href="#roadmap"]']],
+            ['navContact', ['.nav-links a[href="#contact"]', '.nav-mobile a[href="#contact"]']],
+            ['heroGreeting', '.hero-greeting'],
+            ['heroBio', '.hero-bio', 'html'],
+            ['heroHighlight', '.hero-highlight'],
+            ['certSubtitle', '.hero-certification-subtitle'],
+            ['viewWork', '.hero-buttons .btn-primary', 'button'],
+            ['downloadCv', '.hero-buttons .btn-secondary', 'button'],
+            ['aboutTitle', '#about .section-title'],
+            ['aboutSubtitle', '#about > .section-subtitle'],
+            ['aboutHeading', '.about-text h3'],
+            ['aboutP1', '.about-text p:nth-of-type(1)'],
+            ['aboutP2', '.about-text p:nth-of-type(2)'],
+            ['aboutP3', '.about-text p:nth-of-type(3)'],
+            ['statRole', '.stats-row .stat:nth-child(1) .stat-label'],
+            ['statCloud', '.stats-row .stat:nth-child(2) .stat-label'],
+            ['statLanguages', '.stats-row .stat:nth-child(3) .stat-label'],
+            ['skillsTitle', '#skills .section-title'],
+            ['skillsSubtitle', '#skills > .section-subtitle'],
+            ['skillsCatData', '.skill-category:nth-child(1) h3'],
+            ['skillPython', '.skill-category:nth-child(1) .skill-item:nth-of-type(1) .skill-name'],
+            ['statusPracticing', '.skill-category:nth-child(1) .skill-item:nth-of-type(1) .skill-percentage'],
+            ['skillSql', '.skill-category:nth-child(1) .skill-item:nth-of-type(2) .skill-name'],
+            ['statusHandsOn', '.skill-category:nth-child(1) .skill-item:nth-of-type(2) .skill-percentage'],
+            ['skillPandas', '.skill-category:nth-child(1) .skill-item:nth-of-type(3) .skill-name'],
+            ['statusPracticing', '.skill-category:nth-child(1) .skill-item:nth-of-type(3) .skill-percentage'],
+            ['skillSklearn', '.skill-category:nth-child(1) .skill-item:nth-of-type(4) .skill-name'],
+            ['statusStudying', '.skill-category:nth-child(1) .skill-item:nth-of-type(4) .skill-percentage'],
+            ['skillLlm', '.skill-category:nth-child(1) .skill-item:nth-of-type(5) .skill-name'],
+            ['statusExploring', '.skill-category:nth-child(1) .skill-item:nth-of-type(5) .skill-percentage'],
+            ['skillsCatPlatforms', '.skill-category:nth-child(2) h3'],
+            ['skillPowerBi', '.skill-category:nth-child(2) .skill-item:nth-of-type(1) .skill-name'],
+            ['statusHandsOn', '.skill-category:nth-child(2) .skill-item:nth-of-type(1) .skill-percentage'],
+            ['skillSqlServer', '.skill-category:nth-child(2) .skill-item:nth-of-type(2) .skill-name'],
+            ['statusExposure', '.skill-category:nth-child(2) .skill-item:nth-of-type(2) .skill-percentage'],
+            ['skillAws', '.skill-category:nth-child(2) .skill-item:nth-of-type(3) .skill-name'],
+            ['statusCertified', '.skill-category:nth-child(2) .skill-item:nth-of-type(3) .skill-percentage'],
+            ['skillAzure', '.skill-category:nth-child(2) .skill-item:nth-of-type(4) .skill-name'],
+            ['statusLearning', '.skill-category:nth-child(2) .skill-item:nth-of-type(4) .skill-percentage'],
+            ['skillsCatSoftware', '.skill-category:nth-child(3) h3'],
+            ['skillCsharp', '.skill-category:nth-child(3) .skill-item:nth-of-type(1) .skill-name'],
+            ['statusCurrentRole', '.skill-category:nth-child(3) .skill-item:nth-of-type(1) .skill-percentage'],
+            ['skillJava', '.skill-category:nth-child(3) .skill-item:nth-of-type(2) .skill-name'],
+            ['statusProjects', '.skill-category:nth-child(3) .skill-item:nth-of-type(2) .skill-percentage'],
+            ['skillTs', '.skill-category:nth-child(3) .skill-item:nth-of-type(3) .skill-name'],
+            ['statusProjects', '.skill-category:nth-child(3) .skill-item:nth-of-type(3) .skill-percentage'],
+            ['skillDocker', '.skill-category:nth-child(3) .skill-item:nth-of-type(4) .skill-name'],
+            ['statusHandsOn', '.skill-category:nth-child(3) .skill-item:nth-of-type(4) .skill-percentage'],
+            ['experienceTitle', '#experience .section-title'],
+            ['experienceSubtitle', '#experience > .section-subtitle'],
+            ['exp1Title', '.timeline-item:nth-child(1) .timeline-content h3'],
+            ['exp1Date', '.timeline-item:nth-child(1) .date'],
+            ['exp1Location', '.timeline-item:nth-child(1) .timeline-meta'],
+            ['exp1Li1', '.timeline-item:nth-child(1) li:nth-child(1)'],
+            ['exp1Li2', '.timeline-item:nth-child(1) li:nth-child(2)'],
+            ['exp1Li3', '.timeline-item:nth-child(1) li:nth-child(3)'],
+            ['exp1Li4', '.timeline-item:nth-child(1) li:nth-child(4)'],
+            ['exp2Title', '.timeline-item:nth-child(2) .timeline-content h3'],
+            ['exp2Date', '.timeline-item:nth-child(2) .date'],
+            ['exp2Location', '.timeline-item:nth-child(2) .timeline-meta'],
+            ['exp2Li1', '.timeline-item:nth-child(2) li:nth-child(1)'],
+            ['exp2Li2', '.timeline-item:nth-child(2) li:nth-child(2)'],
+            ['exp2Li3', '.timeline-item:nth-child(2) li:nth-child(3)'],
+            ['exp2Li4', '.timeline-item:nth-child(2) li:nth-child(4)'],
+            ['exp3Title', '.timeline-item:nth-child(3) .timeline-content h3'],
+            ['exp3Date', '.timeline-item:nth-child(3) .date'],
+            ['exp3Location', '.timeline-item:nth-child(3) .timeline-meta'],
+            ['exp3Li1', '.timeline-item:nth-child(3) li:nth-child(1)'],
+            ['exp3Li2', '.timeline-item:nth-child(3) li:nth-child(2)'],
+            ['exp3Li3', '.timeline-item:nth-child(3) li:nth-child(3)'],
+            ['exp4Title', '.timeline-item:nth-child(4) .timeline-content h3'],
+            ['exp4Date', '.timeline-item:nth-child(4) .date'],
+            ['exp4Location', '.timeline-item:nth-child(4) .timeline-meta'],
+            ['exp4Li1', '.timeline-item:nth-child(4) li:nth-child(1)'],
+            ['exp4Li2', '.timeline-item:nth-child(4) li:nth-child(2)'],
+            ['projectsTitle', '#projects .section-title'],
+            ['projectsSubtitle', '#projects .section-subtitle'],
+            ['project1Type', '.project-card:nth-child(1) .project-type'],
+            ['project1Desc', '.project-card:nth-child(1) .project-description'],
+            ['repository', '.project-card:nth-child(1) .project-links a:nth-child(1)'],
+            ['readme', '.project-card:nth-child(1) .project-links a:nth-child(2)'],
+            ['project2Type', '.project-card:nth-child(2) .project-type'],
+            ['project2Desc', '.project-card:nth-child(2) .project-description'],
+            ['repository', '.project-card:nth-child(2) .project-links a:nth-child(1)'],
+            ['readme', '.project-card:nth-child(2) .project-links a:nth-child(2)'],
+            ['project3Type', '.project-card:nth-child(3) .project-type'],
+            ['project3Title', '.project-card:nth-child(3) .project-title'],
+            ['project3Desc', '.project-card:nth-child(3) .project-description'],
+            ['viewGitHub', '.project-card:nth-child(3) .project-links a:nth-child(1)'],
+            ['viewKaggle', '.project-card:nth-child(3) .project-links a:nth-child(2)'],
+            ['viewGitHub', '.projects-cta .btn:nth-child(1)', 'button'],
+            ['viewKaggle', '.projects-cta .btn:nth-child(2)', 'button'],
+            ['viewTableau', '.projects-cta .btn:nth-child(3)', 'button'],
+            ['roadmapTitle', '#roadmap .section-title'],
+            ['roadmapSubtitle', '#roadmap > .section-subtitle'],
+            ['phaseBuilt', '.roadmap-phase:nth-child(1) .phase-badge'],
+            ['phase1Title', '.roadmap-phase:nth-child(1) .phase-title'],
+            ['phase1Li1', '.roadmap-phase:nth-child(1) li:nth-child(1)'],
+            ['phase1Li2', '.roadmap-phase:nth-child(1) li:nth-child(2)'],
+            ['phase1Li3', '.roadmap-phase:nth-child(1) li:nth-child(3)'],
+            ['phase1Li4', '.roadmap-phase:nth-child(1) li:nth-child(4)'],
+            ['phaseApplied', '.roadmap-phase:nth-child(2) .phase-badge'],
+            ['phase2Title', '.roadmap-phase:nth-child(2) .phase-title'],
+            ['phase2Li1', '.roadmap-phase:nth-child(2) li:nth-child(1)'],
+            ['phase2Li2', '.roadmap-phase:nth-child(2) li:nth-child(2)'],
+            ['phase2Li3', '.roadmap-phase:nth-child(2) li:nth-child(3)'],
+            ['phase2Li4', '.roadmap-phase:nth-child(2) li:nth-child(4)'],
+            ['phaseProgress', '.roadmap-phase:nth-child(3) .phase-badge'],
+            ['phase3Title', '.roadmap-phase:nth-child(3) .phase-title'],
+            ['phase3Li1', '.roadmap-phase:nth-child(3) li:nth-child(1)'],
+            ['phase3Li2', '.roadmap-phase:nth-child(3) li:nth-child(2)'],
+            ['phase3Li3', '.roadmap-phase:nth-child(3) li:nth-child(3)'],
+            ['phase3Li4', '.roadmap-phase:nth-child(3) li:nth-child(4)'],
+            ['phaseNext', '.roadmap-phase:nth-child(4) .phase-badge'],
+            ['phase4Title', '.roadmap-phase:nth-child(4) .phase-title'],
+            ['phase4Li1', '.roadmap-phase:nth-child(4) li:nth-child(1)'],
+            ['phase4Li2', '.roadmap-phase:nth-child(4) li:nth-child(2)'],
+            ['phase4Li3', '.roadmap-phase:nth-child(4) li:nth-child(3)'],
+            ['phase4Li4', '.roadmap-phase:nth-child(4) li:nth-child(4)'],
+            ['contactHeadline', '.contact-headline', 'html'],
+            ['nameLabel', 'label[for="name"]'],
+            ['emailLabel', 'label[for="email"]'],
+            ['messageLabel', 'label[for="message"]'],
+            ['send', '.contact-form button[type="submit"]'],
+            ['footer', 'footer p', 'html']
+        ];
+
+        let currentLanguage = 'en-US';
+
+        function setButtonText(element, text) {
+            const icon = element.querySelector('i');
+            element.textContent = '';
+            if (icon) {
+                element.appendChild(icon);
+                element.appendChild(document.createTextNode(' '));
+            }
+            element.appendChild(document.createTextNode(text));
+        }
+
+        function setContent(selectorOrSelectors, value, mode = 'text') {
+            const selectors = Array.isArray(selectorOrSelectors) ? selectorOrSelectors : [selectorOrSelectors];
+            selectors.forEach(selector => {
+                document.querySelectorAll(selector).forEach(element => {
+                    if (mode === 'html') {
+                        element.innerHTML = value;
+                    } else if (mode === 'button') {
+                        setButtonText(element, value);
+                    } else {
+                        element.textContent = value;
+                    }
+                });
+            });
+        }
+
+        function updateLanguageControls(lang) {
+            const language = languageOptions[lang];
+            document.querySelectorAll('[data-current-flag]').forEach(item => {
+                item.className = `language-flag flag-icon ${language.flagClass}`;
+            });
+            document.querySelectorAll('[data-current-code]').forEach(item => item.textContent = language.code);
+            document.querySelectorAll('.language-toggle').forEach(toggle => {
+                toggle.setAttribute('aria-label', translations[lang].languageAria);
+            });
+            document.querySelectorAll('.language-menu').forEach(menu => {
+                menu.setAttribute('aria-label', translations[lang].languageMenuAria);
+            });
+            document.querySelectorAll('[data-language-option]').forEach(option => {
+                option.classList.toggle('active', option.dataset.languageOption === lang);
+            });
+        }
+
+        function closeLanguageMenus() {
+            document.querySelectorAll('[data-language-switcher]').forEach(switcher => {
+                switcher.classList.remove('open');
+                switcher.querySelector('.language-toggle')?.setAttribute('aria-expanded', 'false');
+            });
+        }
+
+        function applyLanguage(lang, restartTyping = true) {
+            const t = translations[lang] || translations['en-US'];
+            currentLanguage = lang;
+            document.documentElement.lang = languageOptions[lang].htmlLang;
+            document.title = t.pageTitle;
+            document.querySelector('meta[name="description"]')?.setAttribute('content', t.metaDescription);
+            roles = t.roles;
+
+            translationTargets.forEach(([key, selector, mode]) => {
+                setContent(selector, t[key], mode);
+            });
+
+            document.querySelector('.hero-certification')?.setAttribute('aria-label', t.certAria);
+            document.querySelector('.projects-cta .btn:nth-child(3)')?.setAttribute('aria-label', t.tableauAria);
+            document.getElementById('email')?.setAttribute('title', t.emailTitle);
+
+            updateLanguageControls(lang);
+
+            if (restartTyping) {
+                restartTypewriter();
+            }
+        }
+
+        function initializeLanguageSwitchers() {
+            document.querySelectorAll('[data-language-switcher]').forEach(switcher => {
+                const toggle = switcher.querySelector('.language-toggle');
+                toggle?.addEventListener('click', event => {
+                    event.stopPropagation();
+                    const willOpen = !switcher.classList.contains('open');
+                    closeLanguageMenus();
+                    switcher.classList.toggle('open', willOpen);
+                    toggle.setAttribute('aria-expanded', String(willOpen));
+                });
+
+                switcher.querySelectorAll('[data-language-option]').forEach(option => {
+                    option.addEventListener('click', event => {
+                        event.stopPropagation();
+                        applyLanguage(option.dataset.languageOption);
+                        closeLanguageMenus();
+                    });
+                });
+            });
+
+            document.addEventListener('click', closeLanguageMenus);
+            document.addEventListener('keydown', event => {
+                if (event.key === 'Escape') {
+                    closeLanguageMenus();
+                }
+            });
+        }
+let roles = translations[currentLanguage].roles;
+        
+        let currentRole = 0;
+        let currentChar = 0;
+        let isDeleting = false;
+        let typingTimer;
+
+        function typeWriter() {
+            const typingElement = document.getElementById('typing');
+            const role = roles[currentRole];
+
+            if (isDeleting) {
+                currentChar--;
+            } else {
+                currentChar++;
+            }
+
+            typingElement.textContent = role.substring(0, currentChar);
+
+            let delay = isDeleting ? 50 : 100;
+
+            if (!isDeleting && currentChar === role.length) {
+                delay = 2600;
+                isDeleting = true;
+            } else if (isDeleting && currentChar === 0) {
+                isDeleting = false;
+                currentRole = (currentRole + 1) % roles.length;
+                delay = 500;
+            }
+
+            typingTimer = setTimeout(typeWriter, delay);
+        }
+
+        function restartTypewriter() {
+            clearTimeout(typingTimer);
+            currentRole = 0;
+            currentChar = 0;
+            isDeleting = false;
+            const typingElement = document.getElementById('typing');
+            if (typingElement) typingElement.textContent = '';
+            typeWriter();
+        }
+
+        applyLanguage(currentLanguage, false);
+        initializeLanguageSwitchers();
+        typeWriter();
+
+        const navbar = document.getElementById('navbar');
+        const navLinks = document.querySelectorAll('.nav-links a, .nav-mobile a');
+        const hamburger = document.getElementById('hamburger');
+        const navMobile = document.getElementById('nav-mobile');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMobile.classList.toggle('active');
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMobile.classList.remove('active');
+            });
+        });
+
+        const pageSections = document.querySelectorAll('section[id]');
+        const reveals = document.querySelectorAll('section');
+        const skillBars = document.querySelectorAll('.skill-bar-fill');
+        let scrollTicking = false;
+
+        function updateNavbarState() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+
+            let activeSectionId = '';
+            pageSections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                const sectionBottom = sectionTop + section.offsetHeight;
+
+                if (window.scrollY >= sectionTop && window.scrollY < sectionBottom) {
+                    activeSectionId = section.id;
+                }
+            });
+
+            if (activeSectionId) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href') === `#${activeSectionId}`);
+                });
+            }
+        }
+
+        function revealOnScroll() {
+            reveals.forEach(section => {
+                const windowHeight = window.innerHeight;
+                const elementTop = section.getBoundingClientRect().top;
+                const elementVisible = 150;
+
+                if (elementTop < windowHeight - elementVisible) {
+                    section.classList.add('active');
+                }
+            });
+        }
+
+        function animateSkillBars() {
+            skillBars.forEach(bar => {
+                if (bar.dataset.animated) return;
+
+                const rect = bar.parentElement.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    bar.style.animation = 'progressFill 1.5s ease forwards, skillGradientFlow 4.2s ease-in-out infinite 1.5s, skillColorBloom 2.8s ease-in-out infinite 1.5s';
+                    bar.dataset.animated = 'true';
+                }
+            });
+        }
+
+        function updateScrollEffects() {
+            updateNavbarState();
+            revealOnScroll();
+            animateSkillBars();
+            scrollTicking = false;
+        }
+
+        function requestScrollUpdate() {
+            if (scrollTicking) return;
+
+            scrollTicking = true;
+            requestAnimationFrame(updateScrollEffects);
+        }
+
+        window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+        updateScrollEffects();
+
+        function initExperienceTimeline() {
+            const experienceSection = document.getElementById('experience');
+            const timelineItems = document.querySelectorAll('#experience .timeline-item');
+
+            if (!experienceSection || !timelineItems.length) return;
+
+            const showItem = item => item.classList.add('is-visible');
+
+            if (!('IntersectionObserver' in window)) {
+                experienceSection.classList.add('timeline-started');
+                timelineItems.forEach(showItem);
+                return;
+            }
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        experienceSection.classList.add('timeline-started');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.18 });
+
+            const itemObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        showItem(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.24,
+                rootMargin: '0px 0px -12% 0px'
+            });
+
+            sectionObserver.observe(experienceSection);
+            timelineItems.forEach(item => itemObserver.observe(item));
+        }
+
+        initExperienceTimeline();
+
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 30;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                particle.style.animationDuration = (Math.random() * 3 + 4) + 's';
+                particle.style.animationDelay = Math.random() * 2 + 's';
+                particle.style.animation = `particleFloat ${Math.random() * 3 + 4}s ease-in forwards`;
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        createParticles();
+
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('formMessage');
+        const nameInput = document.getElementById('name');
+
+        nameInput.addEventListener('input', () => {
+            const cursorStart = nameInput.selectionStart;
+            const cursorEnd = nameInput.selectionEnd;
+            nameInput.value = nameInput.value.toLocaleUpperCase('pt-BR');
+            nameInput.setSelectionRange(cursorStart, cursorEnd);
+        });
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!contactForm.reportValidity()) return;
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const message = document.getElementById('message').value.trim();
+
+            const subject = encodeURIComponent(`Portfolio contact from ${name}`);
+            const body = encodeURIComponent(`${message}\n\nFrom: ${name}\nEmail: ${email}`);
+            
+            window.location.href = `mailto:lucasmelquiades.dev@gmail.com?subject=${subject}&body=${body}`;
+            formMessage.textContent = translations[currentLanguage].formSuccess.replace('{name}', name);
+            formMessage.className = 'form-message success';
+
+            setTimeout(() => {
+                formMessage.textContent = '';
+                formMessage.className = '';
+            }, 5000);
+        });
+
+        const roadmapProgress = document.querySelector('.roadmap-progress-fill');
+        if (roadmapProgress) {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'progressFill 2s ease forwards';
+                    }
+                });
+            });
+            observer.observe(document.querySelector('#roadmap'));
+        }
+    </script>
+</body>
+</html>

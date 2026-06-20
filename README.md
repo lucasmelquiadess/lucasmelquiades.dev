@@ -10,6 +10,9 @@ Personal portfolio website for Lucas Melquiades de Santana Martins.
 - Projects
 - Learning roadmap
 - Contact links
++
+- Light/Dark mode with 2 new themes
+- 5 languages options
 
 ## Rights
 
